@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #44110F;
+}
+.encabezado {
+    background-color: #5C211E;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+@media (max-width: 375px) { 
+    .encabezado {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
+.btnheader{
+    display: flex;
+    justify-content: space-between;
+}
+.btnheader button {
+    padding: 8px 16px;
+    border: 1px solid gray; 
+    border-radius: 10px;  
+    cursor: pointer;
+}
+@media (max-width: 375px) { 
+    .btnheader button {
+        padding: 8px 16px;
+    border: 1px solid gray; 
+    border-radius: 10px;  
+    cursor: pointer;
+    }
+}
+.homepage{
+    text-decoration: none; 
+    color:white;
+    font-size: 30px;
+    
+}
+.Carrito{
+    color: white;
+    width: 60px;
+    height: 50px;
+    margin-bottom: -17px;
+    text-decoration: none;
+}
+.Iniciar{
+    background-color: #8C433C;
+        color: white;
+}
+.Registrar{
+    background-color: #2C0000;
+    color:white
+}
+/*Hasta aqui el Header*/
+.tyb{
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center;
+    padding-top: 10%
+}
+.titulo{
+    color: white;
+    font-size: 30px;
+}
+@media (max-width: 425px) { 
+    .titulo {
+        font-size: 20px;
+    }
+}
+@media (max-width: 425px) { 
+    div.titulo #subtituloCA {
+        font-size: 20px;
+    }
+}
+.btnCatalogo{
+    padding-top: 1%;
+}
+.VCatalago {
+    padding: 8px 16px;
+    border-radius: 10px;  
+    border: 0cap;
+    cursor: pointer;
+    background-color: #2C0000;
+    color:white
+}
+#ContenedorEstan{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    Width: 100%;
+}
+#imgEstanteria{
+    width: 100%;
+}
+.tyc{
+    color: white;
+    padding-left: 5%;
+}
+@media (max-width: 425px) { 
+    .tyc {
+        font-size: 13px;
+    }
+}
+#subtitulo{
+    color: gray;
+}
+@media (max-width: 425px) { 
+    #subtitulo {
+        margin-right: 24px;
+        font-size: 16px;
+    }
+}
+.citas{
+    display: flex;
+    flex-direction: row;
+}
+@media (max-width: 425px) { 
+    .citas {
+        flex-direction: column; 
+        align-items: center; 
+    }
+}
+.cita{
+    color: white;
+    padding: 2% 2% 1% 2%;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 3% ;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 2%;
+    border-color: #2C2C2C;
+    border-width: 1px; /* Cambia 5px por el grosor que desees */
+    border-style: solid; /* Define el estilo del borde, por ejemplo: solid, dotted, dashed, etc. */
+}
+@media (max-width: 425px) { 
+    .cita {
+        padding :6%;
+        margin-top: 4%;
+        margin-bottom: 4%;
+    }
+}
+div.citas h3 {
+    padding-bottom: 8%;
+  }
+h4{
+    font-size: 14px;
+    font-weight: normal; 
+}
+h4#subtitulo{
+    color: #B3B3B3;
+    padding-bottom: 4px;
+}
