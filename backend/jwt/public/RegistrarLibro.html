@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Registrar Libro</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='css/RegistrarLibro.css'>
+</head>
+<body>
+    <header class="encabezado">
+        <div class="btnheader">
+            <div class="btncasa">
+            <a href="PaginaPrincipal.html" class="homepage">⌂</a>
+            </div>
+        <div class="btnheaders">
+        <a href="admctl.html" style="text-decoration: none;">
+            <img src="/Imagenes/carrito.png" alt="carrito" id="imgcarrito" class="Carrito">
+        </a>
+            <a href="Login.html"><button class="Iniciar">Iniciar Sesion</button></a>
+            <a href="Registrarse.html"> <button class="Registrar">Registrarse</button></a>
+        </div>
+        </div>
+    </header>
+    <section class="tiutloyregis">
+        <h1>Registro de Libro</h1>
+        <h2>Ingrese los datos del libro</h2>
+        <div class="registrolibro">
+            <form id="regislibroForm" enctype="multipart/form-data">
+                <!-- Titulo Libro -->
+                <div class="contenedor">
+                <label for="nombrelibro" class="titulos">Nombre del libro</label>
+                <input type="text"id="nombrelibro" name="nombrelibro" required > 
+                </div>
+                <!-- Categorias -->
+                <div class="contenedor">
+                <label for="opciones" class="titulos">Seleccione la categoria</label>
+                <select id="opciones" name="opciones">
+                    <option value="Fantasia">Fantasia</option>
+                    <option value="Ciencia Ficcion">Ciencia Ficcion</option>
+                    <option value="Terror">Terror</option>
+                    <option value="Suspenso">Suspenso</option>
+                    <option value="Comedia">Comedia</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Novela">Novela</option>
+                </select>
+                </div>
+                <!-- Precio -->
+                <div class="contenedor">
+                <label for="precio"class="titulos">Precio</label>
+                <input type="text" id="precio" name="precio" required>
+                </div>
+                <!-- Autor -->
+                <div class="contenedor">
+                    <label for="autor"class="titulos">Autor</label>
+                    <input type="text" id="autor" name="autor" required>
+                    </div>
+                <!-- Sinopsis -->
+                <div class="contenedor">
+                <label for="sinopsis"class="titulos">Escribe una sinopsis</label>
+                <textarea id="sinopsis" name="sinopsis" rows="5" cols="30"></textarea>
+                </div>
+                <!-- Imagen Libro -->
+                <div class="contenedor">
+                <label for="portada" class="btnportada">Seleccionar Portada</label>
+                <input type="file" id="portada" class="file-input" required> 
+                </div>
+                <div class="contenedor">
+                <button type="submit" id="btnsubir">Guardar</button>
+                </div>
+            </form>
+            <script src="/JS/regislibro.js"></script>
+        </div>
+    </section>
+    <script src="/JS/cuser.js"></script>
+</body>
+</html>

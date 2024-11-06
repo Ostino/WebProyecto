@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="css/Carrito.css">
+    
+</head>
+<body>
+    <header class="encabezado">
+        <div class="btnheader">
+            <div class="btncasa">
+            <a href="PaginaPrincipal.html" class="homepage">⌂</a>
+            </div>
+        <div class="btnheaders">
+        <a href="/Catalogo.html" style="text-decoration: none;">
+            <img src="/Imagenes/carrito.png" alt="carrito" id="imgcarrito" class="Carrito">
+        </a>
+            <a href="/Login.html"><button class="Iniciar">Iniciar Sesion</button></a>
+            <a href="/Registrarse.html"> <button class="Registrar">Registrarse</button></a>
+        </div>
+        </div>
+    </header>
+    <div class="carrito-container">
+        <h1>Carrito</h1>
+        <div class="carrito">
+            <!-- Contenedor lyp -->
+            <div class="libros" id="listalibros">
+                <!-- Lista de libros -->
+                <div class="libro" id="libro">
+                    <!--producto -->
+                    <img src="/Imagenes/LibroTest.png" alt="Harry Potter y la Piedra Filosofal">
+                    <div class="info-producto">
+                        <h2 class="titulolibro">Harry Potter y la Piedra Filosofal</h2>
+                        <p class="preciou">$60</p>
+                        <div class="cantidad">
+                            <button id="MENOS">-</button>
+                            <span class="cantidad-texto">1u</span>
+                            <button id="MAS">+</button>
+                        </div>
+                    </div>
+                    <div class="precio">$60</div>
+                    <button class="eliminar" id="eliminar">
+                        <img src="/Imagenes/basurero.png" alt="Eliminar" id="eliminarimg">
+                    </button>
+                </div>
+    
+                <!-- Otro producto -->
+                <div class="libro" id="libro">
+                    <img src="/Imagenes/LibroTest.png" alt="El Señor de los Anillos: El retorno del rey">
+                    <div class="info-producto">
+                        <h2 class="titulolibro">El señor de los anillos: El retorno del rey</h2>
+                        <p class="preciou">$37</p>
+                        <div class="cantidad">
+                            <button>-</button>
+                            <span class="cantidad-texto">1u</span>
+                            <button>+</button>
+                        </div>
+                    </div>
+                    <div class="precio">$111</div>
+                    <button class="eliminar">
+                        <img src="/Imagenes/basurero.png" alt="Eliminar">
+                    </button>
+                </div>
+                <div class="libro" id="libro">
+                    <img src="/Imagenes/LibroTest.png" alt="El Señor de los Anillos: El retorno del rey">
+                    <div class="info-producto">
+                        <h2 class="titulolibro">El señor de los anillos: El retorno del rey</h2>
+                        <p class="preciou">$37</p>
+                        <div class="cantidad">
+                            <button>-</button>
+                            <span class="cantidad-texto">1u</span>
+                            <button>+</button>
+                        </div>
+                    </div>
+                    <div class="precio">$111</div>
+                    <button class="eliminar">
+                        <img src="/Imagenes/basurero.png" alt="Eliminar">
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Resumen del pedido -->
+            <div class="resumen-pedido">
+                <h3>Resumen de pedido</h3>
+                <p>Subtotal: $171</p>
+                <p>Envío: $5</p>
+                <p>Impuesto: $2</p>
+                <p>Total: $178</p>
+                <button class="pago">Proceder con el pago</button>
+            </div>
+        </div>
+    </div>
+    <script src="/JS/carrito.js"></script>
+    <script src="/JS/cuser.js"></script>
+    <script src="/JS/auth.js"></script>
+</body>
+</html>

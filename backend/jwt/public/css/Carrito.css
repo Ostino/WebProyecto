@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #44110F;
+    color:white;
+}
+.encabezado {
+    background-color: #5C211E;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+@media (max-width: 375px) { 
+    .encabezado {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
+.btnheader{
+    display: flex;
+    justify-content: space-between;
+}
+.btnheader button {
+    padding: 8px 16px;
+    border: 1px solid gray; 
+    border-radius: 10px;  
+    cursor: pointer;
+}
+@media (max-width: 375px) { 
+    .btnheader button {
+        padding: 8px 16px;
+    border: 1px solid gray; 
+    border-radius: 10px;  
+    cursor: pointer;
+    }
+}
+.homepage{
+    text-decoration: none; 
+    color:white;
+    font-size: 30px;
+    
+}
+.Carrito{
+    color: white;
+    width: 60px;
+    height: 50px;
+    margin-bottom: -17px;
+    text-decoration: none;
+}
+.Iniciar{
+    background-color: #8C433C;
+        color: white;
+}
+.Registrar{
+    background-color: #2C0000;
+    color:white
+}
+/*Aqui aca el header*/
+.carrito-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 55px;
+    margin-bottom: 3%;
+    border-bottom: 1px solid white;
+    margin-top: 3%;
+
+}
+
+.carrito {
+    display: flex;
+    justify-content: space-between;
+    
+}
+@media (max-width: 425px) { 
+    .carrito {
+        display: flex;                  /* Utilizamos Flexbox */
+        justify-content: space-between; /* Para separar productos y resumen */
+        flex-direction: column;         /* Asegura que se apilen verticalmente */
+        height: 100vh;
+        padding:20px            /* Esto permitirá que los productos ocupen el espacio restante */
+    }
+}
+.libros {
+    display: flex;
+    flex-direction: column;  
+    gap: 20px;               
+    width: 65%;             
+}
+.libro {
+    display: flex;
+    align-items: center;
+    background-color: #5E302E;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.25);
+    border: 2px solid #D9D9D9;
+}
+@media (max-width: 425px) { 
+    .libros {
+        display: flex;
+    flex-direction: column;         /* Los productos se apilan verticalmente */
+    gap: 20px;                      /* Espacio entre los productos */
+    width: 100%;     
+    margin-bottom: 4%;        /* Esto permitirá que los productos ocupen el espacio restante */
+    }
+}
+
+.libro img {
+    width: 80px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.info-libro {
+    flex-grow: 1;
+}
+
+.info-libro h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.info-libro p {
+    margin-bottom: 10px;
+}
+
+.cantidad {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+.cantidad button {
+    width: 40px;  
+    height: 40px; 
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.precio {
+    font-size: 1.5rem;
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+.eliminar {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+}
+
+.eliminar img {
+    width: 20px;
+    height: auto;
+}
+
+.resumen-pedido {
+    margin-left: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    height: fit-content;
+    background-color: rgba(255, 255, 255, 0.25);
+    border: 2px solid #D9D9D9;
+}
+@media (max-width: 425px) { 
+    .resumen-pedido {
+        margin-left: 0px;
+        background-color: #5E302E;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: auto;               /* Asegura que el resumen esté al final */
+        width: 90%;                    /* O ajusta el ancho según sea necesario */
+        color: white;
+    }
+}
+
+.resumen-pedido h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.resumen-pedido p {
+    font-size: 1rem;
+    margin: 15px 0;
+}
+
+.pago {
+    background-color: #8C433C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+@media (max-width: 375px) { 
+    .pago {
+        background-color: #C04C42;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    }
+}
