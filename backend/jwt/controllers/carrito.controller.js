@@ -17,8 +17,9 @@ const añadiraCarrito = async (req, res) => {
 
     try {
         let cart = await carritoModel.getCarritoByUserId(userId);
-
+        
         if (!cart) {
+            
             console.log("No se encontró el carrito, creando uno nuevo...");
             cart = await carritoModel.createCarrito(userId);
             console.log(`Carrito creado:`, cart);
@@ -104,9 +105,20 @@ const removeUnidadDelCarrito = async (req, res) => {
         return res.status(500).json({ message: 'Error al eliminar una unidad del carrito.' });
     }
 };
+const finalizarCompra= async(req,res)=>{
+    try{
+    const userId = getUserIdFromToken(req);
+    const cart = await carritoModel.getCarritoByUserId(userId);
+    await carritoModel.setCarritoEstadoFalse(cart.idcarrito)
+    }catch (error) {
+        console.error('Error al finalizar la compra', error);
+        res.status(500).json({ error: 'Error al finalizar la compra' });
+    }
+}
 export const carritoController = {
     getCarritoResumen,
     añadiraCarrito,
     removerDelCarrito,
-    removeUnidadDelCarrito
+    removeUnidadDelCarrito,
+    finalizarCompra
 };

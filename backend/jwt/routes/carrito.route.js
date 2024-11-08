@@ -8,5 +8,6 @@ router.get('/total', verifyToken, carritoController.getCarritoResumen);
 router.delete('/remove/:idLibro', verifyToken, carritoController.removerDelCarrito);
 router.post('/agregar', verifyToken, carritoController.añadiraCarrito);
 router.post('/eliminaruno', verifyToken, carritoController.removeUnidadDelCarrito);
+router.put('/finalizar', verifyToken, carritoController.finalizarCompra);
 
 export default router;

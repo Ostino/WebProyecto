@@ -1,6 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
     cargarCarrito();
+    const botonFinalizar = document.getElementById("FinalizarCompra");
 
+    if (botonFinalizar) {
+        console.log("Botón 'FinalizarCompra' encontrado");
+        
+        // Asigna finalizarCompra como callback directamente en el evento click
+        botonFinalizar.addEventListener("click", finalizarCompra);
+        
+    } else {
+        console.error("Botón 'FinalizarCompra' no encontrado en el DOM");
+    }
     document.getElementById("listalibros").addEventListener("click", (event) => {
         const target = event.target;
         console.log("Elemento clicado:", target); // Log para ver qué elemento fue clicado
@@ -96,9 +106,37 @@ async function cargarCarrito() {
             listalibros.insertAdjacentHTML("beforeend", libroHTML);
         });
         actualizarResumen(total);
+        const botonFinalizar = document.getElementById("FinalizarCompra");
+        if (botonFinalizar) {
+            console.log("Botón 'FinalizarCompra' asignado en cargarCarrito");
+            botonFinalizar.addEventListener("click", finalizarCompra);
+        } else {
+            console.error("Botón 'FinalizarCompra' no encontrado después de cargarCarrito");
+        }
     } catch (error) {
         console.error("Error al cargar el carrito:", error);
     }
+}
+
+function actualizarResumen(total) {
+    const resumenContainer = document.querySelector(".resumen-pedido");
+    const envio = 5; 
+    const impuesto = 2; 
+
+    const totalNum = parseFloat(total) || 0; 
+    const envioNum = parseFloat(envio) || 0; 
+    const impuestoNum = parseFloat(impuesto) || 0; 
+
+    const totalGeneral = totalNum + envioNum + impuestoNum;
+
+    resumenContainer.innerHTML = `
+        <h3>Resumen de pedido</h3>
+        <p>Subtotal: $${totalNum.toFixed(2)}</p>
+        <p>Envío: $${envioNum.toFixed(2)}</p>
+        <p>Impuesto: $${impuestoNum.toFixed(2)}</p>
+        <p>Total: $${totalGeneral.toFixed(2)}</p>
+        <button class="pago" id="FinalizarCompra">Proceder con el pago</button>
+    `;
 }
 async function actualizarCantidad(idLibro, Operacion) {
     try {
@@ -152,27 +190,28 @@ async function eliminarDelCarrito(idLibro) {
         console.error("Error al eliminar el libro del carrito:", error);
     }
 }
-
-
 // Función para actualizar el resumen del pedido
-function actualizarResumen(total) {
-    const resumenContainer = document.querySelector(".resumen-pedido");
-    const envio = 5; // valor de ejemplo
-    const impuesto = 2; // valor de ejemploeliminaruno
 
-    // Asegurarse de que total, envio e impuesto son números
-    const totalNum = parseFloat(total) || 0; // convertir a número, usar 0 si es NaN
-    const envioNum = parseFloat(envio) || 0; // asegurarse que envio sea numérico
-    const impuestoNum = parseFloat(impuesto) || 0; // asegurarse que impuesto sea numérico
+ async function finalizarCompra() {
+    console.log("Botón 'finalizar' clicado. Intentando finalizar compra...");
+        try {
+        const response = await fetch("http://localhost:3000/api/v1/carrito/finalizar", {
+            method: "PUT",
+            headers: {
+                "Authorization": `Bearer ${sessionStorage.getItem("token_current_user")}`
+            }
+        });
 
-    const totalGeneral = totalNum + envioNum + impuestoNum;
-
-    resumenContainer.innerHTML = `
-        <h3>Resumen de pedido</h3>
-        <p>Subtotal: $${totalNum.toFixed(2)}</p>
-        <p>Envío: $${envioNum.toFixed(2)}</p>
-        <p>Impuesto: $${impuestoNum.toFixed(2)}</p>
-        <p>Total: $${totalGeneral.toFixed(2)}</p>
-        <button class="pago">Proceder con el pago</button>
-    `;
-} 
+        if (response.ok) {
+            console.log("Compra finalizada correctamente.");
+            alert("Compra finalizada con éxito.");
+            cargarCarrito();
+        } else {
+            console.error("Error al finalizar la compra.");
+            const errorResponse = await response.json();
+            console.error("Detalles del error:", errorResponse);
+        }
+    } catch (error) {
+        console.error("Error al finalizar la compra:", error);
+    }
+}

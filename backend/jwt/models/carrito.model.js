@@ -4,8 +4,16 @@ const createCarrito = async (idUser) => {
     const result = await db.query('INSERT INTO Carrito (idUser) VALUES ($1) RETURNING idCarrito', [idUser]);
     return result.rows[0].idcarrito;
 };
+const getCarritoEstado = async (idCarrito) => {
+    const result = await db.query('SELECT Estado FROM Carrito WHERE idCarrito = $1', [idCarrito]);
+    return result.rows[0];
+};
+const setCarritoEstadoFalse = async (idCarrito) => {
+    const result = await db.query('UPDATE Carrito SET Estado = FALSE WHERE idCarrito = $1;', [idCarrito]);
+    return result.rows[0];
+};
 const getCarritoByUserId = async (idUser) => {
-    const result = await db.query('SELECT * FROM Carrito WHERE idUser = $1', [idUser]);
+    const result = await db.query('SELECT * FROM Carrito WHERE idUser = $1 AND Estado = true;', [idUser]);
     return result.rows[0];
 };
 const getCarritoDetalle = async (cartId, bookId) => {
@@ -112,6 +120,7 @@ const removerUnidadDelCarrito = async (idCarrito, idLibro) => {
 };
 
 export const carritoModel = {
+    getCarritoEstado,
     getCarritoDetallado,
     getCarritoTotal,
     getCarritoDetalle,
@@ -121,5 +130,6 @@ export const carritoModel = {
     addACarritoOActualizar,
     addLibroAlDetalle,
     removerLibroDelCarrito,
-    removerUnidadDelCarrito
+    removerUnidadDelCarrito,
+    setCarritoEstadoFalse
 };
