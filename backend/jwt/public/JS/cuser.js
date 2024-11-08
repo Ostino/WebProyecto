@@ -6,23 +6,52 @@ function displayUserLink() {
         const payloadBase64 = token.split('.')[1];
         return JSON.parse(atob(payloadBase64)); // Decodificar y parsear JSON
     }
-
-    // Selecciona el enlace con la clase 'homepage'
     const homepageLink = document.querySelector("a.homepage");
+    const loginButton = document.getElementById("loginButton");
+    const regisButton = document.getElementById("regisButton");
+    if (token) {
+        try {
+            const { username } = decodeToken(token); // Extraer el username
 
-    if (homepageLink) {  // Verifica que el enlace existe
-        if (token) {
-            try {
-                const { username } = decodeToken(token); // Extraer el username
-                homepageLink.textContent = `⌂ (${username})`; // Actualizar el texto del enlace
-            } catch (error) {
-                console.error("Error al decodificar el token:", error);
+            // Actualizar enlace de homepage
+            if (homepageLink) {
+                homepageLink.textContent = `⌂ (${username})`;
             }
-        } else {
-            homepageLink.textContent = "⌂"; // Si no hay token, dejar el texto por defecto
+            if (loginButton) {
+                loginButton.textContent = "Cerrar Sesión";
+                loginButton.addEventListener("click", function () {
+                    sessionStorage.removeItem("token_current_user"); // Elimina el token
+                    window.location.href = "Login.html"; // Redirige al login
+                });
+            }
+            // Actualizar botón de inicio de sesión a "Cerrar Sesión"
+            if (loginButton) {
+                loginButton.textContent = "Cerrar Sesión";
+                loginButton.addEventListener("click", function () {
+                    sessionStorage.removeItem("token_current_user"); // Elimina el token
+                    window.location.href = "Login.html"; // Redirige al login
+                });
+            }
+
+            // Actualizar botón de registro a "Ver pedidos"
+            if (regisButton) {
+                regisButton.textContent = "Ver pedidos";
+                regisButton.parentElement.href = "HistorialPedidos.html";
+            }
+        } catch (error) {
+            console.error("Error al decodificar el token:", error);
+        }
+    } else {
+        // Si no hay token, mostrar los textos y enlaces por defecto
+        if (homepageLink) homepageLink.textContent = "⌂";
+        if (loginButton) {
+            loginButton.textContent = "Iniciar Sesión";
+            loginButton.parentElement.href = "Login.html"; // Enlace al login
+        }
+        if (regisButton) {
+            regisButton.textContent = "Registrarse";
+            regisButton.parentElement.href = "Registrarse.html"; // Enlace al registro
         }
     }
 }
-
-// Llama a la función para actualizar el enlace
 displayUserLink();
