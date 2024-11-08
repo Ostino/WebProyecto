@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 body {
@@ -61,39 +62,63 @@ body {
     background-color: #2C0000;
     color:white
 }
-/*Hasta aqui el Header*/
-.contenedor{
-    width: 100%;
-    height: auto;
+main {
+    padding: 20px;
 }
-.contitems{
-    display: grid; 
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajusta las columnas automáticamente */
-    gap: 20px; 
-    justify-content: center; 
-    padding: 20px; 
+
+h1 {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 10px;
 }
-@media (max-width: 425px) { 
-    .contitems {
-        padding: 45px; 
-    }
+
+hr {
+    color: white;
+    border: 0;
+    height: 1px;
+    background: #bbb;
+    margin-bottom: 20px;
 }
-.libro {
+
+/* Orders Section */
+/* Orders Section */
+.orders {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.order-card {
+    padding: 15px;
+    border-radius: 8px;
+    color: #fff;
     background-color: rgba(255, 255, 255, 0.25);
-    padding: 18px; /* Añadimos padding interno al libro */
-    border: 2px solid black;
-    text-align: center; /* Centra el texto dentro del div .libro */
+    border: 2px solid #D9D9D9;
 }
-.titulolibro{
-    color: white;
-    padding-top: 1%;
+
+.order-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+    width: 100%; /* Ocupa todo el ancho de la tarjeta */
 }
-.precio{
-    color: white;
-    padding-top: 5%;
+
+.order-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.imglibro{
-    width: 178px; /* Ancho fijo para la imagen */
-    height: 284px; /* Alto fijo para la imagen */
-    object-fit: cover;
+
+.order-info {
+    flex: 3;
+}
+
+.order-quantities {
+    flex: 1;
+    text-align: right;
+}
+
+.order-date {
+    flex: 1;
+    text-align: right;
 }

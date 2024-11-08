@@ -115,10 +115,31 @@ const finalizarCompra= async(req,res)=>{
         res.status(500).json({ error: 'Error al finalizar la compra' });
     }
 }
+const getPedidosByUserId= async(req,res)=>{
+    try{
+    const userId = getUserIdFromToken(req);
+    const cart = await carritoModel.getPedidosByUserId(userId);
+    res.status(200).json({ cart });
+    }catch (error) {
+        console.error('Error al traer los pedidos', error);
+        res.status(500).json({ error: 'Error al traer los pedidos' });
+    }
+}
+const getAllPedidos= async(req,res)=>{
+    try{
+    const cart = await carritoModel.getAllPedidos();
+    res.status(200).json({ cart });
+    }catch (error) {
+        console.error('Error al traer todos los pedidos', error);
+        res.status(500).json({ error: 'Error al traer todos los pedidos' });
+    }
+}
 export const carritoController = {
     getCarritoResumen,
     añadiraCarrito,
     removerDelCarrito,
     removeUnidadDelCarrito,
-    finalizarCompra
+    finalizarCompra,
+    getPedidosByUserId,
+    getAllPedidos
 };

@@ -16,6 +16,34 @@ const getCarritoByUserId = async (idUser) => {
     const result = await db.query('SELECT * FROM Carrito WHERE idUser = $1 AND Estado = true;', [idUser]);
     return result.rows[0];
 };
+const getPedidosByUserId = async (idUser) => {
+    const result = await db.query(`
+        SELECT c.idcarrito, c.created_at, l.nombre, d.cantidad
+        FROM Carrito c
+        JOIN detallecarrito d ON d.idcarrito = c.idcarrito
+        JOIN libros l ON l.idlibro = d.idlibro
+        WHERE c.idUser = $1 AND c.Estado = false;
+    `, [idUser]);
+    return result.rows;
+};
+
+/*const getPedidosByCarritoId = async (idcarrito) => {
+    const result = await db.query(
+        
+        'SELECT * FROM Carrito WHERE idcarrito = $1 AND Estado = false;'
+        , [idUser]);
+    return result.rows;
+};*/
+const getAllPedidos = async () => {
+    const result = await db.query(`
+        SELECT c.idcarrito, c.created_at, l.nombre, d.cantidad
+        FROM Carrito c
+        JOIN detallecarrito d ON d.idcarrito = c.idcarrito
+        JOIN libros l ON l.idlibro = d.idlibro
+        WHERE c.Estado = false;
+    `);
+    return result.rows;
+};
 const getCarritoDetalle = async (cartId, bookId) => {
     const result = await db.query('SELECT * FROM DetalleCarrito WHERE idCarrito = $1 AND idLibro = $2', [cartId, bookId]);
     return result.rows[0];
@@ -131,5 +159,7 @@ export const carritoModel = {
     addLibroAlDetalle,
     removerLibroDelCarrito,
     removerUnidadDelCarrito,
-    setCarritoEstadoFalse
+    setCarritoEstadoFalse,
+    getPedidosByUserId,
+    getAllPedidos
 };

@@ -24,6 +24,7 @@ body {
 .btnheader{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .btnheader button {
     padding: 8px 16px;

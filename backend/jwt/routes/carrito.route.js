@@ -9,5 +9,7 @@ router.delete('/remove/:idLibro', verifyToken, carritoController.removerDelCarri
 router.post('/agregar', verifyToken, carritoController.añadiraCarrito);
 router.post('/eliminaruno', verifyToken, carritoController.removeUnidadDelCarrito);
 router.put('/finalizar', verifyToken, carritoController.finalizarCompra);
+router.get('/pedidos', verifyToken, carritoController.getPedidosByUserId);
+router.get('/allpedidos',carritoController.getAllPedidos);
 
 export default router;
