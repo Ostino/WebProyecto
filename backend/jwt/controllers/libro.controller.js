@@ -102,10 +102,21 @@ const deleteLibroById = async (req, res) => {
         return res.status(500).json({ ok: false, msg: "Error en el servidor" });
     }
 };
+const getAlllibrosByCategoria = async (req, res) => {
+    const { categoria } = req.params;
+    try {
+        const libro = await libroModel.findAllByCategoria(categoria);
+        return res.status(200).json({ ok: true, libro });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ ok: false, msg: 'Error en el servidor' });
+    }
+};
 export const libroController = {
     registerlibro,
     getAlllibros,
     getlibroById,
     updateLibroById,
-    deleteLibroById
+    deleteLibroById,
+    getAlllibrosByCategoria
 };

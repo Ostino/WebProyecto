@@ -6,6 +6,7 @@ const router = Router()
 
 router.post('/registerlibros',upload.single('imagen'), libroController.registerlibro); 
 router.get('/', libroController.getAlllibros); 
+router.get('/ctg/:categoria', libroController.getAlllibrosByCategoria);
 router.get('/:idLibro', libroController.getlibroById); 
 router.put('/:idLibro', upload.single('imagen'), libroController.updateLibroById);
 router.delete('/:idLibro', libroController.deleteLibroById);

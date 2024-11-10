@@ -61,6 +61,26 @@ body {
     color:white
 }
 /*Hasta aqui el Header*/
+/* Estilos para los botones de categoría */
+#category-buttons {
+    display: flex;
+    justify-content: space-around; /* Espacio uniforme entre botones */
+    gap: 10px; /* Espacio adicional entre botones */
+    margin-top: 20px;
+}
+#category-buttons button {
+    background-color: #8C433C; /* Color de fondo azul */
+    color: white; /* Texto en blanco */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+#category-buttons button:hover {
+    background-color: darkblue; /* Color azul oscuro al pasar el cursor */
+}
+
 .contenedor{
     width: 100%;
     height: auto;

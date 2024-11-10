@@ -1,4 +1,24 @@
 document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const response = await fetch("http://localhost:3000/api/v1/categoria"); // Cambia la URL si es necesario
+        const categories = await response.json();
+
+        // Obtener el elemento select
+        const selectElement = document.getElementById("opciones");
+
+        // Limpiar cualquier opción previa
+        selectElement.innerHTML = '';
+
+        // Crear una opción por cada categoría obtenida
+        categories.forEach(category => {
+            const option = document.createElement("option");
+            option.value = category.categoria;  // Suponiendo que la propiedad de la categoría es "categoria"
+            option.textContent = category.categoria; // Esto es lo que verá el usuario
+            selectElement.appendChild(option);
+        });
+    } catch (error) {
+        console.error("Error al cargar las categorías:", error);
+    }
     const idLibro = new URLSearchParams(window.location.search).get('id');
 
     // Cargar los detalles del libro en el formulario

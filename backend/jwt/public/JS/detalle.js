@@ -7,7 +7,7 @@ function getQueryParameter(name) {
 // Espera a que el contenido del DOM esté completamente cargado
 document.addEventListener("DOMContentLoaded", async () => {
     const idLibro = getQueryParameter('idLibro'); 
-    
+    console.log("ID del libro:", idLibro);
     if (!idLibro) {
         alert("ID del libro no proporcionado.");
         return;

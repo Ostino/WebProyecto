@@ -1,16 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     cargarCarrito();
-    const botonFinalizar = document.getElementById("FinalizarCompra");
 
-    if (botonFinalizar) {
-        console.log("Botón 'FinalizarCompra' encontrado");
-        
-        // Asigna finalizarCompra como callback directamente en el evento click
-        botonFinalizar.addEventListener("click", finalizarCompra);
-        
-    } else {
-        console.error("Botón 'FinalizarCompra' no encontrado en el DOM");
-    }
+    
+
     document.getElementById("listalibros").addEventListener("click", (event) => {
         const target = event.target;
         console.log("Elemento clicado:", target); // Log para ver qué elemento fue clicado
@@ -68,21 +60,34 @@ async function cargarCarrito() {
                 "Authorization": `Bearer ${sessionStorage.getItem("token_current_user")}`
             }
         });
+
         if (!response.ok) throw new Error("Error en la respuesta del servidor");
+
         const { total, details } = await response.json();
+        console.log("Datos del carrito recibidos:", details);
+
         const listalibros = document.getElementById("listalibros");
         listalibros.innerHTML = "";
+
+        // Revisa cada detalle individual
         details.forEach((detalle) => {
+            
 
             const idLibro = detalle.idlibro;
             const totalCantidad = detalle.totalcantidad;
             const precioUnitario = detalle.precio;
             const titulo = detalle.nombre;
             const imagen = detalle.imagen;
-            let base64Image = '';
 
+            // Simplificamos el procesamiento de la imagen
+            let base64Image = '';
             if (imagen && imagen.data) {
-                base64Image = `data:image/png;base64,${btoa(String.fromCharCode(...imagen.data))}`;
+                try {
+                    // Utilizamos un método seguro para convertir la imagen
+                    base64Image = `data:image/png;base64,${btoa(new Uint8Array(imagen.data).reduce((data, byte) => data + String.fromCharCode(byte), ''))}`;
+                } catch (error) {
+                    console.error("Error al procesar la imagen:", error);
+                }
             }
 
             const libroHTML = `
@@ -92,9 +97,9 @@ async function cargarCarrito() {
                         <h2 class="titulolibro">${titulo}</h2>
                         <p class="preciou">$${precioUnitario}</p>
                         <div class="cantidad">
-                            <button id="MENOS">-</button>
+                            <button class="MENOS" id="MENOS">-</button>
                             <span class="cantidad-texto">${totalCantidad}u</span>
-                            <button id="MAS">+</button>
+                            <button class="MAS" id="MAS">+</button>
                         </div>
                     </div>
                     <div class="precio">$${totalCantidad * precioUnitario}</div>
@@ -105,7 +110,8 @@ async function cargarCarrito() {
             `;
             listalibros.insertAdjacentHTML("beforeend", libroHTML);
         });
-        actualizarResumen(total);
+
+        actualizarResumen(total); // Llamada única para actualizar el resumen
         const botonFinalizar = document.getElementById("FinalizarCompra");
         if (botonFinalizar) {
             console.log("Botón 'FinalizarCompra' asignado en cargarCarrito");
@@ -117,27 +123,6 @@ async function cargarCarrito() {
         console.error("Error al cargar el carrito:", error);
     }
 }
-
-function actualizarResumen(total) {
-    const resumenContainer = document.querySelector(".resumen-pedido");
-    const envio = 5; 
-    const impuesto = 2; 
-
-    const totalNum = parseFloat(total) || 0; 
-    const envioNum = parseFloat(envio) || 0; 
-    const impuestoNum = parseFloat(impuesto) || 0; 
-
-    const totalGeneral = totalNum + envioNum + impuestoNum;
-
-    resumenContainer.innerHTML = `
-        <h3>Resumen de pedido</h3>
-        <p>Subtotal: $${totalNum.toFixed(2)}</p>
-        <p>Envío: $${envioNum.toFixed(2)}</p>
-        <p>Impuesto: $${impuestoNum.toFixed(2)}</p>
-        <p>Total: $${totalGeneral.toFixed(2)}</p>
-        <button class="pago" id="FinalizarCompra">Proceder con el pago</button>
-    `;
-}
 async function actualizarCantidad(idLibro, Operacion) {
     try {
         let url = "";
@@ -146,6 +131,7 @@ async function actualizarCantidad(idLibro, Operacion) {
         } else if (Operacion === "MENOS") {
             url = `http://localhost:3000/api/v1/carrito/eliminaruno`;
         }
+        console.log("Se esta haciendo el fetch a ",url)
         const response = await fetch(url, {
             method: "POST",
             headers: {
@@ -190,9 +176,55 @@ async function eliminarDelCarrito(idLibro) {
         console.error("Error al eliminar el libro del carrito:", error);
     }
 }
-// Función para actualizar el resumen del pedido
 
- async function finalizarCompra() {
+
+// Función para actualizar el resumen del pedido
+function actualizarResumen(total) {
+    const resumenContainer = document.querySelector(".resumen-pedido");
+    const envio = 5; // valor de ejemplo
+    const impuesto = 2; // valor de ejemploeliminaruno
+
+    // Asegurarse de que total, envio e impuesto son números
+    const totalNum = parseFloat(total) || 0; // convertir a número, usar 0 si es NaN
+    const envioNum = parseFloat(envio) || 0; // asegurarse que envio sea numérico
+    const impuestoNum = parseFloat(impuesto) || 0; // asegurarse que impuesto sea numérico
+
+    const totalGeneral = totalNum + envioNum + impuestoNum;
+
+    resumenContainer.innerHTML = `
+        <h3>Resumen de pedido</h3>
+        <p>Subtotal: $${totalNum.toFixed(2)}</p>
+        <p>Envío: $${envioNum.toFixed(2)}</p>
+        <p>Impuesto: $${impuestoNum.toFixed(2)}</p>
+        <p>Total: $${totalGeneral.toFixed(2)}</p>
+        <button class="pago" id="FinalizarCompra" >Proceder con el pago</button>
+    `;
+} 
+async function finalizarCompra() {
+      // Asegúrate de evitar la acción predeterminada si es necesario
+    console.log("finalizarCompra ejecutada");
+
+    try {
+        // Aquí va la lógica para finalizar la compra (envío de datos a la API o lo que sea necesario)
+        const response = await fetch('http://localhost:3000/api/v1/carrito/finalizar', {
+            method: 'PUT',
+            headers: {
+                "Authorization": `Bearer ${sessionStorage.getItem("token_current_user")}`
+            }
+            // Agrega el cuerpo del request según lo que necesites
+        });
+
+        if (!response.ok) {
+            throw new Error("Error al finalizar la compra");
+        }
+
+        console.log("Compra finalizada con éxito");
+    } catch (error) {
+        console.error("Error al finalizar la compra:", error);
+    }
+}
+
+/* async function finalizarCompra() {
     console.log("Botón 'finalizar' clicado. Intentando finalizar compra...");
         try {
         const response = await fetch("http://localhost:3000/api/v1/carrito/finalizar", {
@@ -214,4 +246,4 @@ async function eliminarDelCarrito(idLibro) {
     } catch (error) {
         console.error("Error al finalizar la compra:", error);
     }
-}
+}*/

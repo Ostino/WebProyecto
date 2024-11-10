@@ -4,6 +4,7 @@ import userRouter from './routes/user.route.js'
 import libroRouter from './routes/libro.route.js'
 import publicRouter from './routes/public.route.js'
 import carritoRouter from './routes/carrito.route.js'
+import categoriaRouter from './routes/categoria.route.js'
 import path from 'path'
 
 //correr servidor npm run dev
@@ -23,6 +24,7 @@ import path from 'path'
  app.use('/api/v1/users',userRouter)
  app.use('/api/v1/libros',libroRouter)
  app.use('/api/v1/carrito',carritoRouter)
+ app.use('/api/v1/categoria',categoriaRouter)
  
  const PORT = process.env.PORT || 3000
 

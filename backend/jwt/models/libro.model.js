@@ -62,7 +62,7 @@ const findAll = async () => {
             SELECT l.*, i.nombreImagen, i.extension, i.imagen
             FROM Libros l
             LEFT JOIN Imagenes i ON l.idImagen = i.idImagen
-        `
+        `,
     };
     const { rows } = await db.query(query);
     
@@ -80,6 +80,31 @@ const findAll = async () => {
     });
     return rows;
 };
+const findAllByCategoria = async(categoria)=>{
+    const query = {
+        text: `
+            SELECT l.*, i.nombreImagen, i.extension, i.imagen
+            FROM Libros l
+            LEFT JOIN Imagenes i ON l.idImagen = i.idImagen
+            where categoria = $1
+        `, values: [categoria]
+    };
+    const { rows } = await db.query(query);
+    
+    rows.forEach(libro => {
+        if (libro.imagen) {
+            try {
+                const imageBuffer = Buffer.from(libro.imagen);
+                const base64Image = imageBuffer.toString('base64');
+                libro.imagen = `data:image/${libro.extension};base64,${base64Image}`;
+            } catch (error) {
+                console.error("Error al convertir imagen a base64:", error);
+                libro.imagen = null; 
+            }
+        }
+    });
+    return rows;
+}
 const updateById = async (idLibro, updatedFields) => {
     const { nombre, categoria, precio, autor, sinopsis, imagen } = updatedFields;
     
@@ -151,5 +176,6 @@ export const libroModel = {
     findOneById,
     findAll,
     updateById,
-    deleteById
+    deleteById,
+    findAllByCategoria
 };
