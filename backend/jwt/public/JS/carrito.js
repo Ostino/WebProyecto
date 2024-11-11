@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
     cargarCarrito();
-
-    
-
     document.getElementById("listalibros").addEventListener("click", (event) => {
         const target = event.target;
         console.log("Elemento clicado:", target); // Log para ver qué elemento fue clicado

@@ -6,7 +6,7 @@ function displayUserLink() {
         const payloadBase64 = token.split('.')[1];
         return JSON.parse(atob(payloadBase64)); // Decodificar y parsear JSON
     }
-    const homepageLink = document.querySelector("a.homepage");
+    const homepageLink = document.querySelector("h3.user");
     const loginButton = document.getElementById("loginButton");
     const regisButton = document.getElementById("regisButton");
     if (token) {
@@ -15,7 +15,7 @@ function displayUserLink() {
 
             // Actualizar enlace de homepage
             if (homepageLink) {
-                homepageLink.textContent = `⌂ (${username})`;
+                homepageLink.textContent = `Bienvenido ${username}`;
             }
             if (loginButton) {
                 loginButton.textContent = "Cerrar Sesión";
@@ -43,7 +43,7 @@ function displayUserLink() {
         }
     } else {
         // Si no hay token, mostrar los textos y enlaces por defecto
-        if (homepageLink) homepageLink.textContent = "⌂";
+        if (homepageLink) homepageLink.textContent = "Bienvenido";
         if (loginButton) {
             loginButton.textContent = "Iniciar Sesión";
             loginButton.parentElement.href = "Login.html"; // Enlace al login

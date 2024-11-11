@@ -2,16 +2,17 @@
     margin: 0;
     padding: 0;
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    color:#EDE5D6
 }
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #44110F;
-    color:white;
+    background-color: #2E2A24;
 }
+
 .encabezado {
-    background-color: #5C211E;
+    background-color: #EDE5D6;
     padding: 20px;
     justify-content: space-between;
     align-items: center;
@@ -28,57 +29,68 @@ body {
 }
 .btnheader button {
     padding: 8px 16px;
-    border: 1px solid gray; 
+    border: 1px solid #A47D44; 
     border-radius: 10px;  
     cursor: pointer;
 }
 @media (max-width: 375px) { 
     .btnheader button {
         padding: 8px 16px;
-    border: 1px solid gray; 
+    border: 1px solid #A47D44; 
     border-radius: 10px;  
     cursor: pointer;
     }
 }
 .homepage{
     text-decoration: none; 
-    color:white;
+    color:#A47D44;
     font-size: 30px;
     
 }
 .Carrito{
-    color: white;
     width: 60px;
     height: 50px;
     margin-bottom: -17px;
     text-decoration: none;
 }
 .Iniciar{
-    background-color: #8C433C;
-        color: white;
+    background-color: #EDE5D6;
+        color: #A47D44;
 }
 .Registrar{
-    background-color: #2C0000;
-    color:white
+    background-color: #A47D44;
+    color:#EDE5D6
 }
 /*Aqui aca el header*/
+/*#2E2A24 color gris de fondo */
+/*#EDE5D6 color blanco*/
+/*#607D56 color verde verde*/
+/*##A47D44 color dorado*/
+/*##3A5069 color azul*/
+/*##6B4E71 color morado*/
 .carrito-container {
     max-width: 1000px;
     margin: 0 auto;
 }
-
 h1 {
     font-size: 55px;
     margin-bottom: 3%;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #EDE5D6;
     margin-top: 3%;
-
 }
-
+@media (max-width: 768px) { 
+    h1 {
+        padding: 5px;
+    }
+}
 .carrito {
     display: flex;
     justify-content: space-between;
-    
+}
+@media (max-width: 768px) { 
+    .carrito {
+        padding: 10px;
+    }
 }
 @media (max-width: 425px) { 
     .carrito {
@@ -98,53 +110,46 @@ h1 {
 .libro {
     display: flex;
     align-items: center;
-    background-color: #5E302E;
     padding: 20px;
     border-radius: 10px;
     position: relative;
-    background-color: rgba(255, 255, 255, 0.25);
-    border: 2px solid #D9D9D9;
+    background-color: rgba(238, 229, 214, 0.25);
+    border: 2px solid #EDE5D6;
 }
 @media (max-width: 425px) { 
     .libros {
-        display: flex;
+    display: flex;
     flex-direction: column;         /* Los productos se apilan verticalmente */
     gap: 20px;                      /* Espacio entre los productos */
     width: 100%;     
     margin-bottom: 4%;        /* Esto permitirá que los productos ocupen el espacio restante */
     }
 }
-
 .libro img {
     width: 80px;
     height: auto;
     margin-right: 20px;
 }
-
 .info-libro {
     flex-grow: 1;
 }
-
 .info-libro h2 {
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
-
 .info-libro p {
     margin-bottom: 10px;
 }
-
 .cantidad {
     display: flex;
     align-items: center;
     gap: 15px; 
 }
-
 .cantidad button {
     width: 40px;  
     height: 40px; 
-    background-color: #333;
-    color: white;
+    background-color: #2E2A24;
+    color: #EDE5D6;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -176,18 +181,16 @@ h1 {
     border-radius: 10px;
     width: 30%;
     height: fit-content;
-    background-color: rgba(255, 255, 255, 0.25);
-    border: 2px solid #D9D9D9;
+    background-color: rgba(238, 229, 214, 0.25);
+    border: 2px solid #EDE5D6;
 }
 @media (max-width: 425px) { 
     .resumen-pedido {
         margin-left: 0px;
-        background-color: #5E302E;
-        padding: 20px;
+        padding: 17px;
         border-radius: 10px;
         margin-top: auto;               /* Asegura que el resumen esté al final */
         width: 90%;                    /* O ajusta el ancho según sea necesario */
-        color: white;
     }
 }
 
@@ -202,8 +205,8 @@ h1 {
 }
 
 .pago {
-    background-color: #8C433C;
-    color: white;
+    background-color: #607D56;
+    color: #EDE5D6;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
@@ -211,14 +214,4 @@ h1 {
     font-size: 1rem;
     margin-top: 10px;
 }
-@media (max-width: 375px) { 
-    .pago {
-        background-color: #C04C42;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 1rem;
-    }
-}
+

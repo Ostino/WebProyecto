@@ -7,10 +7,16 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #44110F;
+    background-color: #2E2A24;
 }
+/*#2E2A24 color gris de fondo */
+/*#EDE5D6 color blanco*/
+/*#607D56 color verde verde*/
+/*##A47D44 color dorado*/
+/*##3A5069 color azul*/
+/*##6B4E71 color morado*/
 .encabezado {
-    background-color: #5C211E;
+    background-color: #EDE5D6;
     padding: 20px;
     justify-content: space-between;
     align-items: center;
@@ -27,38 +33,37 @@ body {
 }
 .btnheader button {
     padding: 8px 16px;
-    border: 1px solid gray; 
+    border: 1px solid #A47D44; 
     border-radius: 10px;  
     cursor: pointer;
 }
 @media (max-width: 375px) { 
     .btnheader button {
         padding: 8px 16px;
-    border: 1px solid gray; 
+    border: 1px solid #A47D44; 
     border-radius: 10px;  
     cursor: pointer;
     }
 }
 .homepage{
     text-decoration: none; 
-    color:white;
+    color:#A47D44;
     font-size: 30px;
     
 }
 .Carrito{
-    color: white;
     width: 60px;
     height: 50px;
     margin-bottom: -17px;
     text-decoration: none;
 }
 .Iniciar{
-    background-color: #8C433C;
-        color: white;
+    background-color: #EDE5D6;
+        color: #A47D44;
 }
 .Registrar{
-    background-color: #2C0000;
-    color:white
+    background-color: #A47D44;
+    color: #EDE5D6
 }
 /*Hasta aqui el Header*/
 .tyb{
@@ -69,7 +74,7 @@ body {
     padding-top: 10%
 }
 .titulo{
-    color: white;
+    color: #EDE5D6;
     font-size: 30px;
 }
 @media (max-width: 425px) { 
@@ -86,12 +91,12 @@ body {
     padding-top: 1%;
 }
 .VCatalago {
-    padding: 8px 16px;
+    padding: 10px 25px;
     border-radius: 10px;  
     border: 0cap;
     cursor: pointer;
-    background-color: #2C0000;
-    color:white
+    background-color: #607D56;
+    color:#EDE5D6
 }
 #ContenedorEstan{
     margin-top: 5%;
@@ -102,7 +107,7 @@ body {
     width: 100%;
 }
 .tyc{
-    color: white;
+    color: #EDE5D6;
     padding-left: 5%;
 }
 @media (max-width: 425px) { 
@@ -110,52 +115,14 @@ body {
         font-size: 13px;
     }
 }
-#subtitulo{
-    color: gray;
+.historia{
+    padding-top: 20px;
+    line-height: 1.6;
 }
-@media (max-width: 425px) { 
-    #subtitulo {
-        margin-right: 24px;
-        font-size: 16px;
-    }
-}
-.citas{
+.lore{
+    color: #EDE5D6;
     display: flex;
-    flex-direction: row;
-}
-@media (max-width: 425px) { 
-    .citas {
-        flex-direction: column; 
-        align-items: center; 
-    }
-}
-.cita{
-    color: white;
-    padding: 2% 2% 1% 2%;
-    background-color: rgba(255, 255, 255, 0.25);
-    border-radius: 3% ;
-    margin-left: 4%;
-    margin-right: 4%;
-    margin-top: 2%;
-    border-color: #2C2C2C;
-    border-width: 1px; /* Cambia 5px por el grosor que desees */
-    border-style: solid; /* Define el estilo del borde, por ejemplo: solid, dotted, dashed, etc. */
-}
-@media (max-width: 425px) { 
-    .cita {
-        padding :6%;
-        margin-top: 4%;
-        margin-bottom: 4%;
-    }
-}
-div.citas h3 {
-    padding-bottom: 8%;
-  }
-h4{
-    font-size: 14px;
-    font-weight: normal; 
-}
-h4#subtitulo{
-    color: #B3B3B3;
-    padding-bottom: 4px;
+    flex-direction: column;
+    align-items: center;
+    margin: 45px
 }

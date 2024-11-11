@@ -7,9 +7,14 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #2C0000;
-    
+    background-color: #2E2A24;
+    overflow-x: hidden;
 }
+
+
+/*#474138 color estoscuro*/
+/*#474138 color estmedioclaro*/
+/*#877B6A color estclaro*/
 .contarriba{
     position: relative; /* Necesario para que los elementos hijos se posicionen de manera absoluta */
     height: 200px; /* Altura del contenedor */
@@ -34,7 +39,7 @@ body {
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-bottom: 100px solid #44110F; /* Color del triángulo */
+    border-bottom: 100px solid #474138; /* Color del triángulo */
 }
 .triOA{
     position: absolute; 
@@ -43,21 +48,21 @@ body {
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-top: 100px solid #44110F; /* El color del triángulo invertido hacia arriba */
+    border-top: 100px solid #474138; /* El color del triángulo invertido hacia arriba */
 }
 div#n1.triOA{
     border-left: 61px solid transparent;
     border-right: 74px solid transparent;
     left: 36%;
     top: -25%;
-    border-top: 126px solid #44110F;
+    border-top: 126px solid #474138;
 }
 div#n2.triOA{
     border-left: 50px solid transparent;
     border-right: 57px solid transparent;
     left: 52%;
     top: -7%;
-    border-top: 123px solid #44110F;
+    border-top: 123px solid #474138;
 }
 div#n.triOA{
     border-left: 75px solid transparent;
@@ -74,35 +79,35 @@ div#n3.triOA{
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-top: 100px solid #5C211E; /* El color del triángulo invertido hacia arriba */
+    border-top: 100px solid #474138; /* El color del triángulo invertido hacia arriba */
 }
 div#n1.triLA{
     border-left: 118px solid transparent;
     border-right: 83px solid transparent;
     top: 0%;
     left: 23%;
-    border-top: 130px solid #5C211E;
+    border-top: 130px solid #474138;
 }
 div#n2.triLA{
     border-left: 80px solid transparent;
     border-right: 80px solid transparent;
     top: -14%;
     left: 18%;
-    border-top: 131px solid #5C211E;
+    border-top: 131px solid #474138;
 }
 div#n3.triLA{
     border-left: 125px solid transparent;
     border-right: 80px solid transparent;
     top: 0%;
     right: 24%;
-    border-top: 121px solid #5C211E;
+    border-top: 121px solid #474138;
 }
 div#n4.triLA{
     border-left: 80px solid transparent;
     border-right: 80px solid transparent;
     top: -28%;
     right: 19%;
-    border-top: 154px solid #5C211E;
+    border-top: 154px solid #474138;
 }
 .triCA{
     transform: translateX(-50%);
@@ -112,7 +117,7 @@ div#n4.triLA{
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-top: 100px solid #74322D; /* El color del triángulo invertido hacia arriba */
+    border-top: 100px solid #877B6A; /* El color del triángulo invertido hacia arriba */
     display: flex;
     justify-content: center;  /* Centra horizontalmente */
     align-items: center;
@@ -123,7 +128,7 @@ div#n4.triLA{
     left: 50%;   /* Centra horizontalmente */
     transform: translate(-50%, -300%);  /* Compensa el ancho y alto del contenido */
     font-size: 24px;   /* Ajusta el tamaño del símbolo */
-    color: white; 
+    color: #EDE5D6; 
 }
 
 div#n1.triCA{
@@ -131,14 +136,14 @@ div#n1.triCA{
     border-right: 130px solid transparent;
     top: -10%;
     left: 15%;
-    border-top: 160px solid #74322D;
+    border-top: 160px solid #877B6A;
 }
 div#n2.triCA{
     border-left: 130px solid transparent;
     border-right: 130px solid transparent;
     top: 0%;
     left: 4%;
-    border-top: 160px solid #74322D;
+    border-top: 160px solid #877B6A;
     
 }
 div#n3.triCA{
@@ -146,14 +151,14 @@ div#n3.triCA{
     border-right: 100px solid transparent;
     top: -1%;
     right: -2%;
-    border-top: 137px solid #74322D;
+    border-top: 137px solid #877B6A;
 }
 div#n4.triCA{
     border-left: 75px solid transparent;
     border-right: 31px solid transparent;
     top: 0%;
-    right: 0%;
-    border-top: 182px solid #74322D;
+    right: -5%;
+    border-top: 182px solid #877B6A;
 }
 /* Hasta aqui las estalactitas arriba */
 /*EStalactitas abajo*/
@@ -164,21 +169,21 @@ div#n4.triCA{
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-bottom: 100px solid #44110F; /* El color del triángulo invertido hacia arriba */
+    border-bottom: 100px solid #474138; /* El color del triángulo invertido hacia arriba */
 }
 div#n1.triOAb{
     border-left: 61px solid transparent;
     border-right: 74px solid transparent;
     left: 36%;
     /*bottom: -25%;*/
-    border-bottom: 126px solid #44110F;
+    border-bottom: 126px solid #474138;
 }
 div#n2.triOAb{
     border-left: 50px solid transparent;
     border-right: 57px solid transparent;
     left: 52%;
     /*bottom: -7%;*/
-    border-bottom: 123px solid #44110F;
+    border-bottom: 123px solid #474138;
 }
 div#n.triOAb{
     border-left: 75px solid transparent;
@@ -195,35 +200,35 @@ div#n3.triOAb{
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-bottom: 100px solid #5C211E; 
+    border-bottom: 100px solid #474138; 
 }
 div#n1.triLAb{
     border-left: 118px solid transparent;
     border-right: 83px solid transparent;
     bottom: 0%;
     left: 23%;
-    border-bottom: 130px solid #5C211E;
+    border-bottom: 130px solid #474138;
 }
 div#n2.triLAb{
     border-left: 80px solid transparent;
     border-right: 80px solid transparent;
     /*bottom: -14%;*/
     left: 18%;
-    border-bottom: 131px solid #5C211E;
+    border-bottom: 131px solid #474138;
 }
 div#n3.triLAb{
     border-left: 125px solid transparent;
     border-right: 80px solid transparent;
     bottom: 0%;
     right: 24%;
-    border-bottom: 121px solid #5C211E;
+    border-bottom: 121px solid #474138;
 }
 div#n4.triLAb{
     border-left: 80px solid transparent;
     border-right: 80px solid transparent;
     /*bottom: -28%;*/
     right: 19%;
-    border-bottom: 154px solid #5C211E;
+    border-bottom: 154px solid #474138;
 }
 .triCAb{
     transform: translateX(-50%);
@@ -233,40 +238,45 @@ div#n4.triLAb{
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-bottom: 100px solid #74322D; /* El color del triángulo invertido hacia arriba */
+    border-bottom: 100px solid #877B6A; /* El color del triángulo invertido hacia arriba */
 }
 div#n1.triCAb{
     border-left: 130px solid transparent;
     border-right: 130px solid transparent;
     /*bottom: -10%;*/
     left: 15%;
-    border-bottom: 160px solid #74322D;
+    border-bottom: 160px solid #877B6A;
 }
 div#n2.triCAb{
     border-left: 130px solid transparent;
     border-right: 130px solid transparent;
     bottom: 0%;
     left: 4%;
-    border-bottom: 160px solid #74322D;
+    border-bottom: 160px solid #877B6A;
 }
 div#n3.triCAb{
     border-left: 100px solid transparent;
     border-right: 100px solid transparent;
     /*bottom: -1%;*/
     right: -2%;
-    border-bottom: 137px solid #74322D;
+    border-bottom: 137px solid #877B6A;
 }
 div#n4.triCAb{
     border-left: 75px solid transparent;
     border-right: 31px solid transparent;
     bottom: 0%;
-    right: 0%;
-    border-bottom: 182px solid #74322D;
+    right: -5%;
+    border-bottom: 182px solid #877B6A;
 }
-
+/*#2E2A24 color gris de fondo */
+/*#EDE5D6 color blanco*/
+/*#607D56 color verde verde*/
+/*##A47D44 color dorado*/
+/*##3A5069 color azul*/
+/*##6B4E71 color morado*/
 /*Hasta aqui estalactitas abajo*/
 .tyl{
-    color: white;
+    color: #EDE5D6;
     display: inline-block;
     margin: 0 auto;   
     width: 280px;
@@ -277,27 +287,31 @@ div#n4.triCAb{
 }
 .Login{
     width: 250px;
-    color: white;
+    color: #EDE5D6;
     background-color: rgba(255, 255, 255, 0.25);
     border-radius: 3%;
-    border-color: #ffffff;
+    border-color: #EDE5D6;
     border-width: 1px;
     border-style: solid;
     padding: 2% 5% 5% 5%;
-    
 }
+
 .contyl {
     text-align: center; /* Asegura que el inline-block esté centrado */
     width: 100%;
-    margin-top: -4%;
+    margin-top: -80px;
 }
-
+@media (max-width: 768px) { 
+    .contyl {
+        margin-top: -135px;
+    }
+}
 .inputbox {
     position: relative;
     margin: 30px 0;
     width: 240px;
-    border-bottom: 2px solid white;
-    color: white;
+    border-bottom: 2px solid #EDE5D6;
+    color: #EDE5D6;
 }
 
 .inputbox label {
@@ -305,7 +319,7 @@ div#n4.triCAb{
     top: 50%;
     left: 5px;
     transform: translateY(-50%);
-    color: white;
+    color: #EDE5D6;
     font-size: 1em;
     pointer-events: none;
     transition: 0.5s;
@@ -326,24 +340,239 @@ input:valid~label {
     outline: none;
     font-size: 1em;
     padding: 0 35px 0 5px;
-    color: white;
+    color: #EDE5D6;
 }
 button{
     width: 100%;
-    color: #ffffff;
+    color: #EDE5D6;
     padding: 8px 16px;
-    border: 1px solid gray; 
+    border: 1px solid #607D56; 
     border-radius: 10px;  
     cursor: pointer;
     margin-bottom: 15px;
-    background-color: #44110F;
+    background-color: #607D56;
 }
 a{
-    color: white;
+    color: #EDE5D6;
     
 }
 .register a {
     position: relative;
     z-index: 10; /* Asegúrate de que el enlace esté en la parte superior */
+
+}
+@media (max-width: 768px) {
+    div#n1.triOA{
+        border-left: 61px solid transparent;
+        border-right: 74px solid transparent;
+        left: 36%;
+        top: -25%;
+        border-top: 108px solid #474138;
+    }
+    div#n2.triOA{
+        border-left: 50px solid transparent;
+        border-right: 57px solid transparent;
+        left: 52%;
+        top: -7%;
+        border-top: 75px solid #474138;
+    }
+ 
+    div#n3.triOA{
+        border-left: 75px solid transparent;
+        border-right: 75px solid transparent;
+        display: none;
+    }
+    .triLA{
+        position: absolute; 
+        z-index: 2;
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-top: 100px solid #474138; /* El color del triángulo invertido hacia arriba */
+    }
+    div#n1.triLA{
+        border-left: 118px solid transparent;
+        border-right: 83px solid transparent;
+        top: 0%;
+        left: 23%;
+        border-top: 74px solid #474138;
+    }
+    div#n2.triLA{
+        border-left: 80px solid transparent;
+        border-right: 80px solid transparent;
+        top: -14%;
+        left: 18%;
+        border-top: 95px solid #474138;
+    }
+    div#n3.triLA{
+        border-left: 125px solid transparent;
+        border-right: 80px solid transparent;
+        top: 0%;
+        right: 24%;
+        border-top: 60px solid #474138;
+    }
+    div#n4.triLA{
+        border-left: 80px solid transparent;
+        border-right: 80px solid transparent;
+        top: -28%;
+        right: 19%;
+        border-top: 119px solid #474138;
+    } 
+    div#n1.triCA{
+        border-left: 130px solid transparent;
+        border-right: 130px solid transparent;
+        top: -10%;
+        left: 15%;
+        border-top: 95px solid #877B6A;
+    }
+    div#n2.triCA{
+        border-left: 130px solid transparent;
+        border-right: 130px solid transparent;
+        top: 0%;
+        left: 4%;
+        border-top: 120px solid #877B6A;
+        
+    }
+    div#n3.triCA{
+        border-left: 100px solid transparent;
+        border-right: 100px solid transparent;
+        top: -1%;
+        right: -2%;
+        border-top: 50px solid #877B6A;
+    }
+    div#n4.triCA{
+        border-left: 75px solid transparent;
+        border-right: 31px solid transparent;
+        top: 0%;
+        right: -6%;
+        border-top: 65px solid #877B6A;
+    }
+    /* Hasta aqui las estalactitas arriba */
+    /*EStalactitas abajo*/
+    .triOAb{
+        position: absolute; 
+        z-index: 1;
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-bottom: 100px solid #474138; /* El color del triángulo invertido hacia arriba */
+    }
+    div#n1.triOAb{
+        border-left: 61px solid transparent;
+        border-right: 74px solid transparent;
+        left: 36%;
+        /*bottom: -25%;*/
+        border-bottom: 73px solid #474138;
+    }
+    div#n2.triOAb{
+        border-left: 50px solid transparent;
+        border-right: 57px solid transparent;
+        left: 52%;
+        /*bottom: -7%;*/
+        border-bottom: 80px solid #474138;
+    }
+    div#n.triOAb{
+        border-left: 75px solid transparent;
+        border-right: 75px solid transparent;
+        border-bottom: 80px solid #474138;
+    }
+    div#n3.triOAb{
+        border-left: 75px solid transparent;
+        border-right: 75px solid transparent;
+        display: none
+    }
+    .triLAb{
+        position: absolute; 
+        z-index: 2;
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-bottom: 100px solid #474138; 
+    }
+    div#n1.triLAb{
+        border-left: 118px solid transparent;
+        border-right: 83px solid transparent;
+        bottom: 0%;
+        left: 23%;
+        border-bottom: 81px solid #474138;
+    }
+    div#n2.triLAb{
+        border-left: 80px solid transparent;
+        border-right: 80px solid transparent;
+        /*bottom: -14%;*/
+        left: 18%;
+        border-bottom: 77px solid #474138;
+    }
+    div#n3.triLAb{
+        border-left: 125px solid transparent;
+        border-right: 80px solid transparent;
+        bottom: 0%;
+        right: 24%;
+        border-bottom: 73px solid #474138;
+    }
+    div#n4.triLAb{
+        border-left: 80px solid transparent;
+        border-right: 80px solid transparent;
+        /*bottom: -28%;*/
+        right: 19%;
+        border-bottom: 75px solid #474138;
+    }
+    .triCAb{
+        transform: translateX(-50%);
+        position: absolute; 
+        z-index: 3;
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-bottom: 100px solid #877B6A; /* El color del triángulo invertido hacia arriba */
+    }
+    div#n1.triCAb{
+        border-left: 130px solid transparent;
+        border-right: 130px solid transparent;
+        /*bottom: -10%;*/
+        left: 15%;
+        border-bottom: 70px solid #877B6A;
+    }
+    div#n2.triCAb{
+        border-left: 130px solid transparent;
+        border-right: 130px solid transparent;
+        bottom: 0%;
+        left: 4%;
+        border-bottom: 70px solid #877B6A;
+    }
+    div#n3.triCAb{
+        border-left: 100px solid transparent;
+        border-right: 100px solid transparent;
+        /*bottom: -1%;*/
+        right: -2%;
+        border-bottom: 54px solid #877B6A;
+    }
+    div#n4.triCAb{
+        border-left: 75px solid transparent;
+        border-right: 31px solid transparent;
+        bottom: 0%;
+        right: -6%;
+        border-bottom: 72px solid #877B6A;
+    }
+}
+@media (max-width: 425px) {
+    div#n4.triCAb{
+        border-left: 75px solid transparent;
+        border-right: 31px solid transparent;
+        bottom: 0%;
+        right: -12%;
+        border-bottom: 72px solid #877B6A;
+    }
+    div#n4.triCA{
+        border-left: 75px solid transparent;
+        border-right: 31px solid transparent;
+        top: 0%;
+        right: -12%;
+        border-top: 65px solid #877B6A;
+    }
 
 }
