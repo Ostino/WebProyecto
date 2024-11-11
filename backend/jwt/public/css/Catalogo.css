@@ -112,7 +112,9 @@ body {
     padding-top: 5%;
 }
 .imglibro{
-    width: 178px; /* Ancho fijo para la imagen */
-    height: 284px; /* Alto fijo para la imagen */
-    object-fit: cover;
+    width: 100%;
+    max-width: 195px;
+    height: 100%;
+    max-height: 300px;
+    object-fit: contain;
 }
