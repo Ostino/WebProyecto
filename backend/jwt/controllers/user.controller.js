@@ -108,10 +108,48 @@ const findAll= async(req,res)=>{
         })
     }
 }
+const updateByUserId = async (req, res) => {
+    try {
+        console.log("Cuerpo de la solicitud:", req.body);  
+
+        const { username, password, role, idUser } = req.body;
+        console.log("IdUser del controller", idUser); 
+
+        const users = await UserModel.update({ username, password, role, idUser });
+        console.log("Usuario actualizado:", users);
+
+        return res.json({ ok: true, msg: users });
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            ok: false,
+            msg: 'No se pudo actualizar el usuario'
+        });
+    }
+};
+const deleteByUserId = async (req, res) => {
+    try {
+        const { idUser } = req.body;
+        console.log("UserID a borrar",idUser)
+        const result = await UserModel.deleteUser(idUser);
+        return res.json({
+            ok: true,
+            msg: 'usuario eliminado exitosamente.',
+        });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({
+            ok: false,
+            msg: 'error al intentar eliminar el usuario.',
+        });
+    }
+};
 
 export const UserController ={
     register,
     login,
     profile,
-    findAll
+    findAll,
+    updateByUserId,
+    deleteByUserId
 }

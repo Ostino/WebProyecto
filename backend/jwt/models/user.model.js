@@ -26,9 +26,43 @@ const findAll = async()=>{
     const{rows}=await db.query(query)
     return rows
 }
+const update = async({username,password,role,idUser})=>{
+    console.log("IdUser del modelo",idUser)
+    const query={
+        text: 
+        'UPDATE Usuarios SET username = $1, password = $2,role = $3 WHERE idUser = $4;',
+        values:[username,password,role,idUser]
+    }
+    const{rows}=await db.query(query)
+    if (rows.length === 0) {
+        console.log("No hay usuarios para actualizar")
+        return null;
+    }
+    return rows[0]
+}
+const deleteUser = async (idUser) => {
+    try {
+        const query = {
+            text: 'DELETE FROM Usuarios WHERE idUser = $1;',
+            values: [idUser],
+        };
+        const result = await db.query(query);
+        if (result.rowCount === 0) {
+            console.log("No se elimino ningun usuario")
+            return null; 
+        }
+        console.log("Se elimino el usuario")
+        return true;
+    } catch (error) {
+        console.error('Error al eliminar el usuario:', error);
+        throw new Error('Error en la base de datos');
+    }
+};
+
 export const UserModel = {
     create,
     findOneByUsername,
-    findAll
-    
+    findAll,
+    update,
+    deleteUser
 }
