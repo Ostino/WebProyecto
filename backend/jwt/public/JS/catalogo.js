@@ -2,13 +2,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
         const response = await fetch("http://localhost:3000/api/v1/libros");
         const data = await response.json();
-        console.log(data.libro); // Asegúrate de que cada objeto tenga un `idLibro`
+        console.log(data.libro); 
 
         if (data.ok) {
             const librosContainer = document.getElementById("librosContainer");
 
             data.libro.forEach(libro => {
-                // Crear el elemento del libro
                 const libroDiv = document.createElement("div");
                 libroDiv.className = "libro";
                 libroDiv.innerHTML = `
@@ -35,7 +34,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             const button = document.createElement("button");
             button.textContent = category.categoria;
 
-            // Evento para recargar la página con la categoría seleccionada en la URL
             button.addEventListener("click", () => {
                 const selectedCategory = category.categoria;
                 window.location.href = `?categoria=${encodeURIComponent(selectedCategory)}`;
@@ -47,11 +45,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         console.error("Error al cargar categorías:", error);
     }
 
-    // Obtener el parámetro de categoría de la URL
+    
     const urlParams = new URLSearchParams(window.location.search);
     const categoriaSeleccionada = urlParams.get('categoria');
 
-    // Si hay una categoría seleccionada, cargar libros de esa categoría
     if (categoriaSeleccionada) {
         try {
             const response = await fetch(`http://localhost:3000/api/v1/libros/ctg/${categoriaSeleccionada}`);
