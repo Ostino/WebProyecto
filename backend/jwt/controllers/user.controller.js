@@ -131,7 +131,7 @@ const deleteByUserId = async (req, res) => {
     try {
         const { idUser } = req.body;
         console.log("UserID a borrar",idUser)
-        const result = await UserModel.deleteUser(idUser);
+        await UserModel.deleteUser(idUser);
         return res.json({
             ok: true,
             msg: 'usuario eliminado exitosamente.',

@@ -220,27 +220,3 @@ async function finalizarCompra() {
         console.error("Error al finalizar la compra:", error);
     }
 }
-
-/* async function finalizarCompra() {
-    console.log("Botón 'finalizar' clicado. Intentando finalizar compra...");
-        try {
-        const response = await fetch("http://localhost:3000/api/v1/carrito/finalizar", {
-            method: "PUT",
-            headers: {
-                "Authorization": `Bearer ${sessionStorage.getItem("token_current_user")}`
-            }
-        });
-
-        if (response.ok) {
-            console.log("Compra finalizada correctamente.");
-            alert("Compra finalizada con éxito.");
-            cargarCarrito();
-        } else {
-            console.error("Error al finalizar la compra.");
-            const errorResponse = await response.json();
-            console.error("Detalles del error:", errorResponse);
-        }
-    } catch (error) {
-        console.error("Error al finalizar la compra:", error);
-    }
-}*/

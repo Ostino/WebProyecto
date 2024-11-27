@@ -72,7 +72,7 @@ body {
     margin-top: 20px;
     
 }
-#category-buttons button {
+#category-buttons button,#addcategoria {
     background-color: #607D56; /* Color de fondo azul */
     color: #EDE5D6; /* Texto en blanco */
     border: none;
@@ -81,8 +81,19 @@ body {
     cursor: pointer;
     font-size: 16px;
 }
+.addcategoria {
+    display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      margin-left: 44%;
+}
+@media (max-width: 425px) { 
+    .addcategoria {
+        margin-left: 30%;
+    }
+}
 #category-buttons button:hover {
-    background-color: #41543A; /* Color azul oscuro al pasar el cursor */
+    background-color: #41543A; 
 }
 @media (max-width: 768px) { 
     #category-buttons{
