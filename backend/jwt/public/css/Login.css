@@ -10,36 +10,33 @@ body {
     background-color: #2E2A24;
     overflow-x: hidden;
 }
-
-
 /*#474138 color estoscuro*/
 /*#474138 color estmedioclaro*/
 /*#877B6A color estclaro*/
 .contarriba{
-    position: relative; /* Necesario para que los elementos hijos se posicionen de manera absoluta */
-    height: 200px; /* Altura del contenedor */
-    display: flex; /* Alineación horizontal de los triángulos */
-    justify-content: center; /* Centra los triángulos en el contenedor */
-    align-items: flex-start; /* Alinea los triángulos al principio (arriba) */
+    position: relative;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     width: 100%;
 
 }
 .contabajo{
-    position: absolute; /* Necesario para que los elementos hijos se posicionen de manera absoluta */
-    height: 200px; /* Altura del contenedor */
-    display: flex; /* Alineación horizontal de los triángulos */
-    justify-content: center; /* Centra los triángulos en el contenedor */
-    align-items: flex-end; /* Alinea los triángulos al principio (arriba) */
+    position: absolute;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     width: 100%;
     bottom: 0;
 }
-/*Estalactitas arriba*/
 .triO {
     width: 0;
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-bottom: 100px solid #474138; /* Color del triángulo */
+    border-bottom: 100px solid #474138;
 }
 .triOA{
     position: absolute; 
@@ -48,7 +45,7 @@ body {
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-top: 100px solid #474138; /* El color del triángulo invertido hacia arriba */
+    border-top: 100px solid #474138;
 }
 div#n1.triOA{
     border-left: 61px solid transparent;
@@ -79,7 +76,7 @@ div#n3.triOA{
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-top: 100px solid #474138; /* El color del triángulo invertido hacia arriba */
+    border-top: 100px solid #474138;
 }
 div#n1.triLA{
     border-left: 118px solid transparent;
@@ -117,17 +114,17 @@ div#n4.triLA{
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-top: 100px solid #877B6A; /* El color del triángulo invertido hacia arriba */
+    border-top: 100px solid #877B6A;
     display: flex;
-    justify-content: center;  /* Centra horizontalmente */
+    justify-content: center;
     align-items: center;
 }
 .homepage {
     position: absolute;
-    top: 25%;    /* Ajusta la posición vertical dentro del triángulo */
-    left: 50%;   /* Centra horizontalmente */
-    transform: translate(-50%, -300%);  /* Compensa el ancho y alto del contenido */
-    font-size: 24px;   /* Ajusta el tamaño del símbolo */
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -300%);
+    font-size: 24px;
     color: #EDE5D6; 
 }
 
@@ -160,8 +157,6 @@ div#n4.triCA{
     right: -5%;
     border-top: 182px solid #877B6A;
 }
-/* Hasta aqui las estalactitas arriba */
-/*EStalactitas abajo*/
 .triOAb{
     position: absolute; 
     z-index: 1;
@@ -169,20 +164,18 @@ div#n4.triCA{
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-bottom: 100px solid #474138; /* El color del triángulo invertido hacia arriba */
+    border-bottom: 100px solid #474138;
 }
 div#n1.triOAb{
     border-left: 61px solid transparent;
     border-right: 74px solid transparent;
     left: 36%;
-    /*bottom: -25%;*/
     border-bottom: 126px solid #474138;
 }
 div#n2.triOAb{
     border-left: 50px solid transparent;
     border-right: 57px solid transparent;
     left: 52%;
-    /*bottom: -7%;*/
     border-bottom: 123px solid #474138;
 }
 div#n.triOAb{
@@ -212,7 +205,6 @@ div#n1.triLAb{
 div#n2.triLAb{
     border-left: 80px solid transparent;
     border-right: 80px solid transparent;
-    /*bottom: -14%;*/
     left: 18%;
     border-bottom: 131px solid #474138;
 }
@@ -226,7 +218,6 @@ div#n3.triLAb{
 div#n4.triLAb{
     border-left: 80px solid transparent;
     border-right: 80px solid transparent;
-    /*bottom: -28%;*/
     right: 19%;
     border-bottom: 154px solid #474138;
 }
@@ -238,12 +229,11 @@ div#n4.triLAb{
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-bottom: 100px solid #877B6A; /* El color del triángulo invertido hacia arriba */
+    border-bottom: 100px solid #877B6A; 
 }
 div#n1.triCAb{
     border-left: 130px solid transparent;
     border-right: 130px solid transparent;
-    /*bottom: -10%;*/
     left: 15%;
     border-bottom: 160px solid #877B6A;
 }
@@ -257,7 +247,6 @@ div#n2.triCAb{
 div#n3.triCAb{
     border-left: 100px solid transparent;
     border-right: 100px solid transparent;
-    /*bottom: -1%;*/
     right: -2%;
     border-bottom: 137px solid #877B6A;
 }
@@ -271,10 +260,9 @@ div#n4.triCAb{
 /*#2E2A24 color gris de fondo */
 /*#EDE5D6 color blanco*/
 /*#607D56 color verde verde*/
-/*##A47D44 color dorado*/
-/*##3A5069 color azul*/
-/*##6B4E71 color morado*/
-/*Hasta aqui estalactitas abajo*/
+/*#A47D44 color dorado*/
+/*#3A5069 color azul*/
+/*#6B4E71 color morado*/
 .tyl{
     color: #EDE5D6;
     display: inline-block;
@@ -297,7 +285,7 @@ div#n4.triCAb{
 }
 
 .contyl {
-    text-align: center; /* Asegura que el inline-block esté centrado */
+    text-align: center;
     width: 100%;
     margin-top: -80px;
 }
@@ -325,13 +313,10 @@ div#n4.triCAb{
     transition: 0.5s;
 }
 
-/* animations: start */
 input:focus~label,
 input:valid~label {
     top: -5px;
 }
-
-/* animation:end */
 .inputbox input {
     width: 100%;
     height: 50px;
@@ -358,7 +343,7 @@ a{
 }
 .register a {
     position: relative;
-    z-index: 10; /* Asegúrate de que el enlace esté en la parte superior */
+    z-index: 10;
 
 }
 @media (max-width: 768px) {
@@ -389,7 +374,7 @@ a{
         height: 0;
         border-left: 50px solid transparent;
         border-right: 50px solid transparent;
-        border-top: 100px solid #474138; /* El color del triángulo invertido hacia arriba */
+        border-top: 100px solid #474138;
     }
     div#n1.triLA{
         border-left: 118px solid transparent;
@@ -448,8 +433,6 @@ a{
         right: -6%;
         border-top: 65px solid #877B6A;
     }
-    /* Hasta aqui las estalactitas arriba */
-    /*EStalactitas abajo*/
     .triOAb{
         position: absolute; 
         z-index: 1;
@@ -457,20 +440,18 @@ a{
         height: 0;
         border-left: 50px solid transparent;
         border-right: 50px solid transparent;
-        border-bottom: 100px solid #474138; /* El color del triángulo invertido hacia arriba */
+        border-bottom: 100px solid #474138;
     }
     div#n1.triOAb{
         border-left: 61px solid transparent;
         border-right: 74px solid transparent;
         left: 36%;
-        /*bottom: -25%;*/
         border-bottom: 73px solid #474138;
     }
     div#n2.triOAb{
         border-left: 50px solid transparent;
         border-right: 57px solid transparent;
         left: 52%;
-        /*bottom: -7%;*/
         border-bottom: 80px solid #474138;
     }
     div#n.triOAb{
@@ -502,7 +483,6 @@ a{
     div#n2.triLAb{
         border-left: 80px solid transparent;
         border-right: 80px solid transparent;
-        /*bottom: -14%;*/
         left: 18%;
         border-bottom: 77px solid #474138;
     }
@@ -516,7 +496,6 @@ a{
     div#n4.triLAb{
         border-left: 80px solid transparent;
         border-right: 80px solid transparent;
-        /*bottom: -28%;*/
         right: 19%;
         border-bottom: 75px solid #474138;
     }
@@ -528,12 +507,11 @@ a{
         height: 0;
         border-left: 50px solid transparent;
         border-right: 50px solid transparent;
-        border-bottom: 100px solid #877B6A; /* El color del triángulo invertido hacia arriba */
+        border-bottom: 100px solid #877B6A;
     }
     div#n1.triCAb{
         border-left: 130px solid transparent;
         border-right: 130px solid transparent;
-        /*bottom: -10%;*/
         left: 15%;
         border-bottom: 70px solid #877B6A;
     }
@@ -547,7 +525,6 @@ a{
     div#n3.triCAb{
         border-left: 100px solid transparent;
         border-right: 100px solid transparent;
-        /*bottom: -1%;*/
         right: -2%;
         border-bottom: 54px solid #877B6A;
     }

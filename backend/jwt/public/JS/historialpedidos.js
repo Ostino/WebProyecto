@@ -27,13 +27,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         const data = await response.json();
         console.log("Datos recibidos:", data);
 
-        // Verificar si 'data.cart' es un array
         if (!Array.isArray(data.cart)) {
             console.error("La propiedad 'cart' no es un array. Recibido:", data.cart);
             return;
         }
 
-        const pedidos = data.cart; // Accedemos al array de productos en la propiedad 'cart'
+        const pedidos = data.cart;
 
         if (!pedidos || pedidos.length === 0) {
             console.error("No se encontraron pedidos en la respuesta.");
@@ -44,26 +43,22 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         const ordersContainer = document.querySelector(".orders");
 
-        // Eliminar los placeholdes previos antes de cargar los nuevos datos
         ordersContainer.innerHTML = "";
 
         const orders = {};
 
-        // Agrupar productos por idcarrito
         for (let pedido of pedidos) {
             const { idcarrito, created_at, nombre, cantidad } = pedido;
 
             console.log("Procesando pedido:", pedido);
 
-            // Si el carrito no existe en el objeto orders, lo creamos
             if (!orders[idcarrito]) {
                 orders[idcarrito] = {
-                    fecha: created_at.split("T")[0], // Tomamos solo la fecha
+                    fecha: created_at.split("T")[0],
                     productos: [],
                 };
             }
 
-            // Agregamos el producto al carrito correspondiente
             orders[idcarrito].productos.push({
                 nombre: nombre,
                 cantidad: cantidad,
@@ -72,13 +67,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         console.log("Pedidos agrupados:", orders);
 
-        // Crear y añadir cada pedido al HTML
         Object.keys(orders).forEach((idcarrito) => {
             const order = orders[idcarrito];
             const orderCard = document.createElement("div");
             orderCard.className = "order-card";
 
-            // Construir la estructura HTML para cada pedido
             orderCard.innerHTML = `
                 <div class="order-header">
                     <p>Pedido n°${idcarrito} - Fecha: ${order.fecha}</p>

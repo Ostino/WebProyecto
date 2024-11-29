@@ -1,10 +1,8 @@
-// Función para obtener parámetros de la URL
 function getQueryParameter(name) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(name);
 }
 
-// Espera a que el contenido del DOM esté completamente cargado
 document.addEventListener("DOMContentLoaded", async () => {
     const idLibro = getQueryParameter('idLibro'); 
     console.log("ID del libro:", idLibro);
@@ -13,7 +11,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
     }
     try {
-        // Realiza una solicitud al backend para obtener el libro por su ID
         const response = await fetch(`http://localhost:3000/api/v1/libros/${idLibro}`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -21,36 +18,35 @@ document.addEventListener("DOMContentLoaded", async () => {
         const data = await response.json();
 
         if (data.ok) {
-            const libro = data.libro; // Accede al libro
+            const libro = data.libro;
 
-            // Asigna los valores al HTML
             document.getElementById("titulo").textContent = libro.nombre;
             document.getElementById("precio").textContent = `${libro.precio}$`;
-            document.getElementById("categoria").textContent = libro.categoria; // Asigna categoría
-            document.getElementById("autor").textContent = libro.autor; // Asigna autor
-            document.querySelector(".sinopsistxt").textContent = libro.sinopsis; // Asigna sinopsis
-            document.querySelector(".imglibro").src = libro.imagen; // Asigna imagen
-            console.log("Datos del libro:", data.libro); // Imprime los datos del libro para depuración
+            document.getElementById("categoria").textContent = libro.categoria;
+            document.getElementById("autor").textContent = libro.autor;
+            document.querySelector(".sinopsistxt").textContent = libro.sinopsis;
+            document.querySelector(".imglibro").src = libro.imagen;
+            console.log("Datos del libro:", data.libro);
 
-            const addToCartButton = document.getElementById("ACarrito"); // Asegúrate de que este ID coincida con tu HTML
+            const addToCartButton = document.getElementById("ACarrito");
             addToCartButton.addEventListener("click", async () => {
-                const cantidad = 1; // Puedes cambiar esto según sea necesario
+                const cantidad = 1;
                 try {
-                    const token = sessionStorage.getItem("token_current_user"); // Obtener el token del local storage
-                    const response = await fetch(`http://localhost:3000/api/v1/carrito/agregar`, { // Llamar a la nueva ruta
+                    const token = sessionStorage.getItem("token_current_user");
+                    const response = await fetch(`http://localhost:3000/api/v1/carrito/agregar`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                             'Authorization': `Bearer ${token}`
                         },
-                        body: JSON.stringify({ idLibro, cantidad }), // Enviar en el cuerpo
+                        body: JSON.stringify({ idLibro, cantidad }),
                     });
             
                     if (!response.ok) {
                         throw new Error(`Error al añadir al carrito: ${response.status}`);
                     }
                     const result = await response.json();
-                    alert(result.message); // Mostrar mensaje de éxito
+                    alert(result.message);
                 } catch (error) {
                     console.error("Error al añadir al carrito:", error);
                     alert("Error al añadir al carrito. Por favor, inténtelo de nuevo.");

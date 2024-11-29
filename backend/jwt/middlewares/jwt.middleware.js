@@ -28,8 +28,8 @@ export const getUserIdFromToken = (req) => {
         throw new Error('Token no proporcionado');
     }
     try {
-        const decoded = jwt.verify(token, 'PalabraToken'); // Asegúrate de usar la misma clave secreta
-        return decoded.iduser; // O el campo que contenga el ID del usuario
+        const decoded = jwt.verify(token, 'PalabraToken'); 
+        return decoded.iduser;
     } catch (error) {
         console.error('Error al verificar el token:', error.message);
         throw new Error('Token inválido');

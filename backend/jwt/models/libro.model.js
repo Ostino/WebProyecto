@@ -21,7 +21,6 @@ const create = async ({ nombre, categoria, precio, autor, sinopsis, imagen }) =>
         throw error;
     }
 };
-
 const findOneById = async (idLibro) => {
     if (!idLibro || isNaN(idLibro)) {
         return null; 
@@ -55,7 +54,6 @@ const findOneById = async (idLibro) => {
     }
     return null; 
 };
-
 const findAll = async () => {
     const query = {
         text: `

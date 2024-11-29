@@ -18,7 +18,6 @@ const findOneByUsername = async (username)=>{
     const{rows}=await db.query(query)
     return rows[0]
 }
-
 const findAll = async()=>{
     const query={
         text:'select * from Usuarios',

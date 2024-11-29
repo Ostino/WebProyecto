@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             if (data.ok) {
                 const librosContainer = document.getElementById("librosContainer");
-                librosContainer.innerHTML = ''; // Limpiar contenido previo
+                librosContainer.innerHTML = '';
 
                 data.libro.forEach(libro => {
                     const libroDiv = document.createElement("div");

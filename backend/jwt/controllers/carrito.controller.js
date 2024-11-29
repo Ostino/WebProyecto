@@ -92,7 +92,6 @@ const removeUnidadDelCarrito = async (req, res) => {
             return res.status(404).json({ message: 'Carrito no encontrado.' });
         }
 
-        // Eliminar una unidad del libro en el carrito
         const result = await carritoModel.removerUnidadDelCarrito(cart.idcarrito, idLibro);
 
         if (result.rowCount === 0) {
@@ -110,6 +109,7 @@ const finalizarCompra= async(req,res)=>{
     const userId = getUserIdFromToken(req);
     const cart = await carritoModel.getCarritoByUserId(userId);
     await carritoModel.setCarritoEstadoFalse(cart.idcarrito)
+    res.status(200).json({ message: 'Compra finalizada con éxito' });
     }catch (error) {
         console.error('Error al finalizar la compra', error);
         res.status(500).json({ error: 'Error al finalizar la compra' });

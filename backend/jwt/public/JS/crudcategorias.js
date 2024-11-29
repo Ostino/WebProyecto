@@ -81,5 +81,4 @@ async function guardarCategoria(event) {
     }
 }
 
-// Cargar categorías al cargar la página
 document.addEventListener("DOMContentLoaded", cargarCategorias);

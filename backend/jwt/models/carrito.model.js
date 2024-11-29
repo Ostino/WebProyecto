@@ -26,14 +26,6 @@ const getPedidosByUserId = async (idUser) => {
     `, [idUser]);
     return result.rows;
 };
-
-/*const getPedidosByCarritoId = async (idcarrito) => {
-    const result = await db.query(
-        
-        'SELECT * FROM Carrito WHERE idcarrito = $1 AND Estado = false;'
-        , [idUser]);
-    return result.rows;
-};*/
 const getAllPedidos = async () => {
     const result = await db.query(`
         SELECT c.idcarrito, c.created_at, l.nombre, d.cantidad
@@ -79,7 +71,7 @@ const addLibroAlDetalle = async (cartId, bookId, quantity, unitPrice) => {
 const getLibroPrecioById = async (bookId) => {
     console.log(bookId)
     const result = await db.query('SELECT precio FROM Libros WHERE idLibro = $1', [bookId]);
-    return result.rows[0].precio; // Retorna el precio del libro
+    return result.rows[0].precio; 
 };
 const addACarritoOActualizar = async (cartId, bookId, quantity) => {
     console.log(`Intentando añadir o actualizar libro en el carrito...`);

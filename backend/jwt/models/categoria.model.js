@@ -13,7 +13,6 @@ const create = async(categoria) =>{
     const{rows}=await db.query(result)
     return rows[0]
 };
-
 const update = async(idCategoria,Categoria) =>{
     console.log("La categoria a que llego al model es ",Categoria,"y su id",idCategoria)
     const query={

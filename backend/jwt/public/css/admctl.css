@@ -13,9 +13,9 @@ body {
 /*#2E2A24 color gris de fondo */
 /*#EDE5D6 color blanco*/
 /*#607D56 color verde verde*/
-/*##A47D44 color dorado*/
-/*##3A5069 color azul*/
-/*##6B4E71 color morado*/
+/*#A47D44 color dorado*/
+/*#3A5069 color azul*/
+/*#6B4E71 color morado*/
 .encabezado {
     background-color: #EDE5D6;
     padding: 20px;
@@ -64,17 +64,16 @@ body {
     background-color: #A47D44;
     color:#EDE5D6
 }
-/*Hasta aqui el Header*/
 #category-buttons {
     display: flex;
-    justify-content: space-around; /* Espacio uniforme entre botones */
-    gap: 10px; /* Espacio adicional entre botones */
+    justify-content: space-around; 
+    gap: 10px; 
     margin-top: 20px;
     
 }
 #category-buttons button,#addcategoria {
-    background-color: #607D56; /* Color de fondo azul */
-    color: #EDE5D6; /* Texto en blanco */
+    background-color: #607D56; 
+    color: #EDE5D6; 
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -98,12 +97,12 @@ body {
 @media (max-width: 768px) { 
     #category-buttons{
     display: grid;
-    grid-template-columns: repeat(3); /* 3 columnas */
+    grid-template-columns: repeat(3); 
     gap: 10px;
     }
     #category-buttons button:nth-child(7) {
-        grid-column: span 3; /* Hace que el último botón ocupe toda la fila */
-        justify-self: center; /* Centra el botón */
+        grid-column: span 3; 
+        justify-self: center; 
     }
 }
 .contenedor{
@@ -112,7 +111,7 @@ body {
 }
 .contitems{
     display: grid; 
-    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); /* Ajusta las columnas automáticamente */
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); 
     gap: 20px; 
     justify-content: center; 
     padding: 20px; 
@@ -124,9 +123,9 @@ body {
 }
 .libro {
     background-color: rgba(237, 229, 214, 0.25);
-    padding: 18px; /* Añadimos padding interno al libro */
+    padding: 18px; 
     border: 2px solid black;
-    text-align: center; /* Centra el texto dentro del div .libro */
+    text-align: center; 
 }
 .titulolibro{
     color: #EDE5D6;

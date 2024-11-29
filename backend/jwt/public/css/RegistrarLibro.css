@@ -62,7 +62,6 @@ body {
     background-color: #A47D44;
     color:#EDE5D6
 }
-/*Hasta aqui el Header*/
 .tiutloyregis{
     display: flex;
     flex-direction: column;
@@ -125,7 +124,7 @@ body {
     color:#2E2A24;
 }
 .file-input {
-    display: none; /* Ocultar el botón predeterminado */
+    display: none;
   }
 .contenedor:nth-of-type(6) {
     display: flex;
@@ -136,17 +135,17 @@ body {
     text-align: center;
     display: inline-block;
     padding: 10px 20px;
-    background-color: #3A5069; /* Color de fondo del botón */
+    background-color: #3A5069;
     border: 1px solid #3A5069;
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
-    font-size: 16px; /* Tamaño de la fuente */
-    transition: background-color 0.3s; /* Transición suave */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
 }
 #btnsubir{ 
     width: 100%;
     padding: 10px 20px;
-    background-color: #607D56; /* Color de fondo del botón */
+    background-color: #607D56;
     border: 1px solid #607D56;
     border-radius: 5px;
     font-size: 16px;

@@ -1,5 +1,4 @@
 import { libroModel } from "../models/libro.model.js";
-//  /api/v1/libros/registerlibros
 const registerlibro = async (req, res) => {
     try {
         const { nombre, categoria, precio, autor, sinopsis } = req.body;
@@ -33,7 +32,6 @@ const registerlibro = async (req, res) => {
         return res.status(500).json({ ok: false, msg: 'Error en el servidor' });
     }
 };
-
 const getAlllibros = async (req, res) => {
     try {
         const libro = await libroModel.findAll();
@@ -43,7 +41,6 @@ const getAlllibros = async (req, res) => {
         return res.status(500).json({ ok: false, msg: 'Error en el servidor' });
     }
 };
-
 const getlibroById = async (req, res) => {
     const { idLibro } = req.params;
     try {

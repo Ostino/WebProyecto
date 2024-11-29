@@ -43,9 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Función para decodificar el JWT
 function decodeJwt(token) {
-    const payload = token.split('.')[1]; // Obtener la parte del payload
-    const decoded = JSON.parse(atob(payload)); // Decodificar y convertir de base64 a JSON
+    const payload = token.split('.')[1];
+    const decoded = JSON.parse(atob(payload));
     return decoded;
 }

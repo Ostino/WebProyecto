@@ -1,6 +1,5 @@
 import jwt from "jsonwebtoken"
 import { UserModel } from "../models/user.model.js";
-//  /api/v1/users/register
 const register = async(req,res)=>{
     try{
         console.log(req.body)
@@ -35,7 +34,6 @@ const register = async(req,res)=>{
         })
     }
 }
-//  /api/v1/users/login
 const login = async(req,res)=>{
     try{
         const{username,password} = req.body
@@ -92,7 +90,7 @@ const profile = async(req,res)=>{
         console.log(error)
         return res.status(500).json({
             ok:false,
-            msg:'Error server'
+            msg:'Error al traer usuario'
         })
     }
 }

@@ -19,5 +19,4 @@ const upload = multer({
     }
 });
 
-// Exportar el middleware de multer
 export default upload;

@@ -1,19 +1,16 @@
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const response = await fetch("http://localhost:3000/api/v1/categoria"); // Cambia la URL si es necesario
+        const response = await fetch("http://localhost:3000/api/v1/categoria");
         const categories = await response.json();
 
-        // Obtener el elemento select
         const selectElement = document.getElementById("opciones");
 
-        // Limpiar cualquier opción previa
         selectElement.innerHTML = '';
 
-        // Crear una opción por cada categoría obtenida
         categories.forEach(category => {
             const option = document.createElement("option");
-            option.value = category.categoria;  // Suponiendo que la propiedad de la categoría es "categoria"
-            option.textContent = category.categoria; // Esto es lo que verá el usuario
+            option.value = category.categoria;
+            option.textContent = category.categoria;
             selectElement.appendChild(option);
         });
     } catch (error) {
@@ -21,7 +18,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
     const idLibro = new URLSearchParams(window.location.search).get('id');
 
-    // Cargar los detalles del libro en el formulario
     try {
         const response = await fetch(`http://localhost:3000/api/v1/libros/${idLibro}`);
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -40,18 +36,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.error("Error al obtener los detalles del libro:", error);
     }
 
-    // Manejar el evento submit para actualizar el libro
     document.getElementById('regislibroForm').addEventListener('submit', async (e) => {
-        e.preventDefault(); // Evitar el comportamiento por defecto del formulario
+        e.preventDefault();
 
-        // Recoger los datos del formulario
         const nombre = document.getElementById('nombrelibro').value;
         const categoria = document.getElementById('opciones').value;
         const precio = document.getElementById('precio').value;
         const autor = document.getElementById('autor').value;
         const sinopsis = document.getElementById('sinopsis').value;
 
-        // Crear un objeto con los datos a enviar
         const libroActualizado = {
             nombre,
             categoria,
@@ -74,7 +67,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const updateData = await updateResponse.json();
             if (updateData.ok) {
                 alert("El libro ha sido actualizado con éxito");
-                window.location.href = 'admctl.html' // Redirige a la página de detalles del libro
+                window.location.href = 'admctl.html'
             } else {
                 console.error("Error al actualizar el libro:", updateData.msg);
             }

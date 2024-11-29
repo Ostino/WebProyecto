@@ -12,9 +12,9 @@ body {
 /*#2E2A24 color gris de fondo */
 /*#EDE5D6 color blanco*/
 /*#607D56 color verde verde*/
-/*##A47D44 color dorado*/
-/*##3A5069 color azul*/
-/*##6B4E71 color morado*/
+/*#A47D44 color dorado*/
+/*#3A5069 color azul*/
+/*#6B4E71 color morado*/
 .encabezado {
     background-color: #EDE5D6;
     padding: 20px;
@@ -37,12 +37,9 @@ body {
     border-radius: 10px;  
     cursor: pointer;
 }
-@media (max-width: 375px) { 
+@media (max-width: 425px) { 
     .btnheader button {
-        padding: 8px 16px;
-    border: 1px solid #A47D44; 
-    border-radius: 10px;  
-    cursor: pointer;
+        padding: 8px 8px;
     }
 }
 .homepage{
@@ -52,7 +49,7 @@ body {
     
 }
 .Carrito{
-    width: 60px;
+    width: 50px;
     height: 50px;
     margin-bottom: -17px;
     text-decoration: none;
@@ -65,7 +62,6 @@ body {
     background-color: #A47D44;
     color: #EDE5D6
 }
-/*Hasta aqui el Header*/
 .tyb{
     display: flex; 
     flex-direction: column; 

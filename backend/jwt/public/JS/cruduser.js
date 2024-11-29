@@ -66,7 +66,7 @@ async function updateUser(event) {
 
         if (data.ok) {
             alert("Usuario actualizado con éxito.");
-            loadUsers();  // Recargar la lista de usuarios
+            loadUsers();
         } else {
             alert("Error al actualizar el usuario: " + data.msg);
         }

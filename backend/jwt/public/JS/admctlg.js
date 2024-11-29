@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         console.error("Error al cargar categorías:", error);
     }
 
-    
     const urlParams = new URLSearchParams(window.location.search);
     const categoriaSeleccionada = urlParams.get('categoria');
 
@@ -56,7 +55,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             if (data.ok) {
                 const librosContainer = document.getElementById("librosContainer");
-                librosContainer.innerHTML = ''; // Limpiar contenido previo
+                librosContainer.innerHTML = '';
 
                 data.libro.forEach(libro => {
                     const libroDiv = document.createElement("div");

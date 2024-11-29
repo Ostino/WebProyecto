@@ -12,9 +12,9 @@ body {
 /*#2E2A24 color gris de fondo */
 /*#EDE5D6 color blanco*/
 /*#607D56 color verde verde*/
-/*##A47D44 color dorado*/
-/*##3A5069 color azul*/
-/*##6B4E71 color morado*/
+/*#A47D44 color dorado*/
+/*#3A5069 color azul*/
+/*#6B4E71 color morado*/
 .encabezado {
     background-color: #EDE5D6;
     padding: 20px;
@@ -99,7 +99,7 @@ hr {
     font-weight: bold;
     margin-bottom: 10px;
     text-align: left;
-    width: 100%; /* Ocupa todo el ancho de la tarjeta */
+    width: 100%;
 }
 
 .order-body {
