@@ -49,7 +49,7 @@ body {
     
 }
 .Carrito{
-    width: 50px;
+    width: 60px;
     height: 50px;
     margin-bottom: -17px;
     text-decoration: none;
@@ -122,3 +122,34 @@ body {
     align-items: center;
     margin: 45px
 }
+
+.image-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 40px;
+    padding: 20px;
+  }
+  @media (max-width: 425px) { 
+    .image-container     {
+        flex-direction: column;
+    }
+}
+  .image-box {
+    text-align: center;
+  }
+  
+  .image-box img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    background-color: transparent;
+  }
+  
+  .image-box p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #EDE5D6;
+    text-align: justify;
+    line-height: 1.6; 
+  }
